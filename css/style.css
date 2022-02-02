@@ -1,0 +1,26 @@
+/* Colour variables*/
+/* Colour function*/
+/* Font variables*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #3D3D3D;
+  background-image: url(../../images/asfalt-dark.png);
+  margin: 0;
+  font-family: "Skolar Sans Latin", sans-serif;
+}
+
+.block__shipping-delivery {
+  color: #FFF;
+  font-family: "Skolar Sans Latin", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+/*# sourceMappingURL=style.css.map */

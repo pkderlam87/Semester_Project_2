@@ -1,0 +1,6 @@
+.block__shipping-delivery{
+    color: getColour(secondary-colour);
+    font-family: $font-primary;
+    display: flex;
+    justify-content: space-evenly;
+}

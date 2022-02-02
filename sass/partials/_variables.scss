@@ -1,0 +1,21 @@
+/* Colour variables*/
+$colours: (
+    primary-colour: #3D3D3D,
+    secondary-colour: #FFF,
+    dark-blue: #03414F,
+    cyan:#69E1FC,
+    pop-up_borders: #962A03,
+    dark-orange: #A62F03,
+    orange: #D96704,
+    light-orange:#FCC4B0,
+    light-yellow:#F7CC97,
+    red: #822503,
+    shadow: #E3E3E3,
+);
+/* Colour function*/
+@function getColour($colour){
+    @return map-get($colours, $colour);
+}
+/* Font variables*/
+$font-primary: "Skolar Sans Latin", sans-serif;
+$font-secondary: "Gitan Latin", sans-serif;
