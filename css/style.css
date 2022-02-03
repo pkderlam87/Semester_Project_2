@@ -10,17 +10,126 @@ body {
   background-color: #3D3D3D;
   background-image: url(../../images/asfalt-dark.png);
   margin: 0;
-  font-family: "Skolar Sans Latin", sans-serif;
 }
 
 .block__shipping-delivery {
   color: #FFF;
+}
+
+.block__shipping-delivery .shipping {
+  -webkit-animation: fadeOut 7s infinite;
+          animation: fadeOut 7s infinite;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.block__shipping-delivery .delivery {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #3D3D3D;
+  -webkit-animation: fadeIn 7s infinite;
+          animation: fadeIn 7s infinite;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  .block__shipping-delivery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .block__shipping-delivery .delivery {
+    -webkit-animation: none;
+            animation: none;
+    background: none;
+    position: relative;
+    width: 35%;
+    margin: 0 auto;
+  }
+  .block__shipping-delivery .shipping {
+    -webkit-animation: none;
+            animation: none;
+    margin: 0 auto;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gitan Latin", sans-serif;
+}
+
+p {
   font-family: "Skolar Sans Latin", sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 /*# sourceMappingURL=style.css.map */

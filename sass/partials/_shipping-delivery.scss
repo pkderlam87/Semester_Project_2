@@ -1,6 +1,44 @@
 .block__shipping-delivery{
     color: getColour(secondary-colour);
-    font-family: $font-primary;
-    display: flex;
-    justify-content: space-evenly;
+  
+        .shipping{
+            animation: fadeOut 7s infinite;
+            @keyframes fadeOut {
+                0%{opacity: 1;}
+                25%{opacity: 1;}
+                50%{opacity: 1;}
+                100%{opacity:0;}
+            }
+    }
+    .delivery{
+        position: absolute;
+        top:0;
+        width: 100%;
+        background: getColour(primary-colour);
+        animation: fadeIn 7s infinite;
+    @keyframes fadeIn {
+        0%{opacity: 0;}
+        25%{opacity: 0;}
+        50%{opacity: 0;}
+        75%{opacity: 1;}
+        100%{opacity: 1;}
+    }
+    }
+    @media(min-width: 769px){
+        &{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .delivery{
+            animation: none;
+            background: none;
+            position: relative;
+            width: 35%;
+            margin: 0 auto;
+        }
+        .shipping{
+            animation: none;
+            margin: 0 auto;
+        }
+    }
 }
