@@ -12,8 +12,23 @@ body {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gitan Latin", sans-serif;
+}
+
+p {
+  font-family: "Skolar Sans Latin", sans-serif;
+}
+
 .block__shipping-delivery {
   color: #FFF;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .block__shipping-delivery .shipping {
@@ -104,6 +119,7 @@ body {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    margin: 0 auto;
   }
   .block__shipping-delivery .delivery {
     -webkit-animation: none;
@@ -111,25 +127,31 @@ body {
     background: none;
     position: relative;
     width: 35%;
-    margin: 0 auto;
   }
   .block__shipping-delivery .shipping {
     -webkit-animation: none;
             animation: none;
-    margin: 0 auto;
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Gitan Latin", sans-serif;
+.banner {
+  width: 100%;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-p {
-  font-family: "Skolar Sans Latin", sans-serif;
+.banner .logo {
+  height: 100px;
+}
+
+@media (min-width: 769px) {
+  .banner {
+    height: 150px;
+  }
+  .banner .logo {
+    height: 150px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

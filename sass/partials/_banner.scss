@@ -1,0 +1,19 @@
+.banner{
+    width: 100%;
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+  background-size: cover;
+    .logo{
+        height: 100px;
+    }
+    @media(min-width:769px){
+        &{
+            height: 150px;
+        }
+        .logo{
+            height: 150px;
+        }
+        
+    }
+}
