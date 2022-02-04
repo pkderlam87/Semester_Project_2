@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+}
+.btn-primary{
+    color: getColour(cyan);
+    background-color: getColour(primary-colour);
+    border: 3px solid getColour(cyan);
+    font-weight: bold;
+    box-shadow: 2px 2px 5px getColour(shadow);
+    width: 50%;
+    &:hover{
+        background-color: getColour(cyan);
+        color: darken(getColour(primary-colour), 10%);
+        border: 3px solid getColour(cyan);;
+    }
+    @media (min-width:$tablet-width) {
+        width: 30%;
+        height: 90px;
+        font-size: 2rem;
+        margin: 10% auto;
+    }
+}

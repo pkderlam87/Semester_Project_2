@@ -1,0 +1,8 @@
+.far,
+.fas{
+    color: getColour(cyan);
+    font-size: 1.5rem;
+    @media (min-width:$tablet-width) {
+        font-size: 1.7rem;
+    }
+}

@@ -1,18 +1,24 @@
+.mobile-height{
+    height: 100px;
+}
+.desktop-height{
+    height: 150px;
+}
 .banner{
     width: 100%;
-    height: 100px;
+    @extend .mobile-height;
     background-position: center;
     background-repeat: no-repeat;
-  background-size: cover;
+    background-size: cover;
     .logo{
-        height: 100px;
+        @extend .mobile-height;
     }
-    @media(min-width:769px){
+    @media(min-width:$tablet-width){
         &{
-            height: 150px;
+            height:150px;
         }
         .logo{
-            height: 150px;
+            height:150px;
         }
         
     }

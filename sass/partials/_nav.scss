@@ -1,0 +1,37 @@
+.bg-dark{
+    background-color: getColour(primary-colour) !important;
+}
+.navbar-dark{
+    .navbar-toggler{
+        border: none;
+        color: getColour(cyan) !important;
+    }
+}
+.nav-link{
+    &:hover{
+        text-decoration: underline;
+    }
+    @media (min-width:$tablet-width){
+        font-size: 1.5rem;
+    }
+}
+.navbar-collapse{
+    flex-grow: inherit;
+}
+.nav-item{
+    @media (min-width:$tablet-width){
+    margin-left: 20%;
+    }
+}
+.favorite_cart_login{
+    @media (min-width:$tablet-width){
+    padding: 1% 6%;
+    display: flex;
+    i{
+        margin-right: 30%;
+    }
+    a{
+        margin-right: 30%;
+    }
+}
+}
