@@ -1,4 +1,5 @@
 @import "partials/custom";
+@import "partials/mixins";
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -56,3 +57,5 @@
 @import "partials/icons";
 @import "partials/nav";
 @import "partials/buttons";
+@import "partials/carousel";
+@import "partials/product";

@@ -1,11 +1,13 @@
 .block__shipping-delivery{
     color: getColour(secondary-colour);
-    width: $full-width;
+    width: 87%;
     margin: $center;
     .shipping{
         animation: fadeOut 7s infinite;
     @keyframes fadeOut {
-        0%{opacity: 1;}
+        0%{opacity: 0;}
+        10%{opacity: 0.5;}
+        20%{opacity: 1;}
         25%{opacity: 1;}
         50%{opacity: 1;}
         100%{opacity:0;}
@@ -14,7 +16,6 @@
     .delivery{
         position: absolute;
         top:0;
-        width: $full-width;
         background: getColour(primary-colour);
         animation: fadeIn 7s infinite;
     @keyframes fadeIn {
@@ -22,20 +23,20 @@
         25%{opacity: 0;}
         50%{opacity: 0;}
         75%{opacity: 1;}
-        100%{opacity: 1;}
+        85%{opacity: 1;}
+        90%{opacity: 0.5;}
+        100%{opacity: 0;}
     }
     }
     @media(min-width: $tablet-width){
         &{
             display: flex;
             justify-content: space-evenly;
-            margin: $center;
         }
         .delivery{
             animation: none;
             background: none;
             position: relative;
-            width: 35%;
         }
         .shipping{
             animation: none;
