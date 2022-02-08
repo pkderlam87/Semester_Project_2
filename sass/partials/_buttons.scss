@@ -19,13 +19,19 @@
 }
 .btn-primary--product{
     @include button (50%, 1.5rem);
-    margin: 3% auto;
+    margin: 16% auto;
     padding: 2%;
     @media (min-width:$tablet-width) {
         @include button (30%, 2rem);
         padding: 2%;
         margin: 5% auto;
+        &:hover{
+            background-color: darken(getColour(primary-colour), 10%);
+            font-size: 2.3rem;
+            color:getColour(cyan);
+        }
     }
+   
 }
 .btn-primary--cart{
     @include button (80%, 1.3rem);

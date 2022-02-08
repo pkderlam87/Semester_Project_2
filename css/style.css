@@ -11556,6 +11556,11 @@ body {
           flex: 1 0 auto;
 }
 
+@font-face {
+  font-family: "Payback";
+  src: url("../../fonts/PaybAck.ttf");
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 .nav-link,
 .btn {
@@ -11696,27 +11701,86 @@ p {
   }
 }
 
-.mobile-height, .banner, .banner .logo {
-  height: 100px;
-}
-
-.desktop-height {
-  height: 150px;
-}
-
 .banner {
   width: 100%;
+  height: 300px;
+  text-align: center;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+  -webkit-animation: scale 15s;
+          animation: scale 15s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes scale {
+  0% {
+    background-size: 105%;
+  }
+  25% {
+    background-size: 110%;
+  }
+  50% {
+    background-size: 115%;
+  }
+  75% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 125%;
+  }
+}
+
+@keyframes scale {
+  0% {
+    background-size: 105%;
+  }
+  25% {
+    background-size: 110%;
+  }
+  50% {
+    background-size: 115%;
+  }
+  75% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 125%;
+  }
 }
 
 @media (min-width: 768px) {
   .banner {
-    height: 150px;
+    height: 400px;
+    text-align: right;
+    padding-right: 5%;
   }
-  .banner .logo {
-    height: 150px;
+}
+
+.banner--slogan {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.banner--slogan h1, .banner--slogan .h1 {
+  font-family: "Payback";
+  font-size: 2.3rem;
+}
+
+.banner--slogan h2, .banner--slogan .h2 {
+  font-family: "Payback";
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .banner--slogan {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .banner--slogan h1, .banner--slogan .h1 {
+    font-size: 5rem;
+  }
+  .banner--slogan h2, .banner--slogan .h2 {
+    font-size: 3rem;
   }
 }
 
@@ -11784,9 +11848,44 @@ footer i {
   background-color: #3D3D3D !important;
 }
 
+.logo {
+  max-width: 75%;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.home {
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .home {
+    display: none;
+  }
+}
+
 .navbar-dark .navbar-toggler {
   border: none;
   color: #69E1FC !important;
+}
+
+.nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 20%;
 }
 
 .nav-link:hover {
@@ -11803,12 +11902,6 @@ footer i {
   -webkit-box-flex: inherit;
       -ms-flex-positive: inherit;
           flex-grow: inherit;
-}
-
-@media (min-width: 768px) {
-  .nav-item {
-    margin-left: 20%;
-  }
 }
 
 @media (min-width: 768px) {
@@ -11854,7 +11947,7 @@ footer i {
 .btn-primary--product {
   width: 50%;
   font-size: 1.5rem;
-  margin: 3% auto;
+  margin: 16% auto;
   padding: 2%;
 }
 
@@ -11864,6 +11957,11 @@ footer i {
     font-size: 2rem;
     padding: 2%;
     margin: 5% auto;
+  }
+  .btn-primary--product:hover {
+    background-color: #242424;
+    font-size: 2.3rem;
+    color: #69E1FC;
   }
 }
 
@@ -11933,13 +12031,6 @@ footer i {
 
 .featured-title {
   color: #FFF;
-  margin: 2% auto;
-  width: 28%;
-}
-
-@media (min-width: 768px) {
-  .featured-title {
-    width: 20%;
-  }
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

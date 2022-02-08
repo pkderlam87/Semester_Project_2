@@ -1,11 +1,32 @@
 .bg-dark{
     background-color: getColour(primary-colour) !important;
 }
+.logo{
+    max-width: 75%;
+    display: none;
+    @media (min-width:$tablet-width){
+        display: flex;
+    }
+}
+.home{
+    display:block;
+    color: getColour(secondary-colour);
+    text-decoration: none;
+    
+    @media (min-width:$tablet-width){
+    display:none;
+    }
+}
 .navbar-dark{
     .navbar-toggler{
         border: none;
         color: getColour(cyan) !important;
     }
+}
+.nav-item{
+    display: flex;
+    align-items: center;
+    max-width: 20%;
 }
 .nav-link{
     &:hover{
@@ -17,11 +38,6 @@
 }
 .navbar-collapse{
     flex-grow: inherit;
-}
-.nav-item{
-    @media (min-width:$tablet-width){
-    margin-left: 20%;
-    }
 }
 .favorite_cart_login{
     @media (min-width:$tablet-width){

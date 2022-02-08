@@ -32,9 +32,5 @@
 }
 .featured-title{
     color: getColour(secondary-colour);
-    margin: 2% auto;
-    width: 28%;
-    @media (min-width: $tablet-width){
-        width: 20%;    
-    }
+    text-align: center;
 }
