@@ -2,19 +2,19 @@
     display: flex;
 }
 .btn{
-    color: getColour(cyan);
+    color: getColour(custom-cyan);
     background-color: getColour(primary-colour);
-    border: 3px solid getColour(cyan);
+    border: 3px solid getColour(custom-cyan);
     font-weight: bold;
     box-shadow: 2px 2px 5px getColour(shadow);
     
     &:hover{
-        background-color: getColour(cyan);
+        background-color: getColour(custom-cyan);
         color: darken(getColour(primary-colour), 10%);
-        border: 3px solid getColour(cyan);
+        border: 3px solid getColour(custom-cyan);
     }
     &:focus{
-        border: 3px solid getColour(cyan);
+        border: 3px solid getColour(custom-cyan);
     }
 }
 .btn-primary--product{
@@ -24,11 +24,11 @@
     @media (min-width:$tablet-width) {
         @include button (30%, 2rem);
         padding: 2%;
-        margin: 5% auto;
+        margin: 5%;
         &:hover{
             background-color: darken(getColour(primary-colour), 10%);
             font-size: 2.3rem;
-            color:getColour(cyan);
+            color:getColour(custom-cyan);
         }
     }
    
@@ -36,5 +36,10 @@
 .btn-primary--cart{
     @include button (80%, 1.3rem);
     padding: 5% 0;
-    margin: 2% auto;
+    margin: 5% auto !important;
+}
+.btn-primary--search:hover{
+    i{
+        color: darken(getColour(primary-colour), 10%);
+    }
 }

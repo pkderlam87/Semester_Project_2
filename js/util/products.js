@@ -1,21 +1,19 @@
 import { baseUrl } from "../components/api.js";
-const products = document.querySelector(".products");
-
 
 export function showProducts(json) {
-    console.log(json);
-    json.forEach(product => {
-        products.innerHTML += `<a class = "product col" href = "/product_detail.html?=${product.id}">
+    const products = document.querySelector(".products");
+    products.innerHTML = "";
+    for (let i = 0; i < json.length; i++) {
+        products.innerHTML += `
         <div class="card" style="width: 18rem;">
-            <img src="${baseUrl}${product.image.formats.small.url}" class="card-img-top" alt="${product.image.alternativeText}">
+        <a class = "product" href = "/product_detail.html?=${json[i].id}">
+            <img src="${baseUrl}${json[i].image.formats.small.url}" class="card-img-top" alt="${json[i].image.alternativeText}">
             <div class="card-body">
-                <h5 class="card-title">${product.title}</h5>
-                <h5 class="card-text">${product.price} Nok</h5>
+                <h5 class="card-title">${json[i].title}</h5>
+                <h5 class="card-text">${json[i].price} Nok</h5>
                 <a href="/cart.html" class="btn btn-primary">Add to Cart</a>
             </div>
-        </div>
-        </a>`
-
-    });
-
+            </a>
+            </div>`;
+    }
 }

@@ -22,38 +22,45 @@
                 <p class="shipping">FREE SHIPPING. FREE 60 DAYS RETURNS</p>
                 <p class="delivery">DELIVERY WITHIN 1-2 WORKING DAYS</p>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
-                                        class="logo"></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/products.html">Products</a>
-                            </li>
-                        </ul>
+            <div class="wrap_nav_favorite_cart_login">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
+                                            class="logo"></a>
+                                    <a href="/index.html" class="home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/products.html">Products</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="favorite_cart_login">
-                        <i class="far fa-heart"></i>
-                        <a href="/cart.html"><i class="fas fa-shopping-cart"></i></a>
-                        <a href="/login.html"><i class="far fa-user-circle"></i></a>
-                    </div>
+                </nav>
+                <div class="favorite_cart_login">
+                    <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
+                            class="favorite_cart_login--logo"></a>
+                    <a href="/"><i class="far fa-heart"></i></a>
+                    <a href="/cart.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="/login.html"><i class="far fa-user-circle"></i></a>
                 </div>
-            </nav>
-            <div class="banner">
+            </div>
+            <div class="banner--products">
             </div>
         </header>
         <main>
-            <div class="container-fluid">
-                <div class="products row"></div>
-            </div>
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" id="search">
+            </form>
+            <div class="message__place"></div>
+            <div class="products"></div>
         </main>
     </div>
     <footer>
@@ -73,7 +80,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="/js/common/banner.js" type="module"></script>
     <script src="/js/util/productsAPI.js" type="module"></script>
 
 </html>
