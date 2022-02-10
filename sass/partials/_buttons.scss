@@ -34,9 +34,15 @@
    
 }
 .btn-primary--cart{
-    @include button (80%, 1.3rem);
-    padding: 5% 0;
-    margin: 5% auto !important;
+    @include button (80%, 1.5rem);
+    padding: 3% 0;
+    margin: 3% auto !important;
+    &:hover{
+        .ri-shopping-cart-2-line,
+        .ri-shopping-cart-2-fill{
+            color: darken(getColour(primary-colour), 10%);
+        }
+    }
 }
 .btn-primary--search:hover{
     i{

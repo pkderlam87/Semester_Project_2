@@ -1,5 +1,7 @@
 .far,
-.fas{
+.fas,
+.ri-shopping-cart-2-line,
+.ri-shopping-cart-2-fill{
     color: getColour(custom-cyan);
     font-size: 1.5rem;
     @media (min-width:$tablet-width) {

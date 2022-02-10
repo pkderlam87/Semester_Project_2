@@ -2,3 +2,9 @@
     width:$width;
     font-size: $font-size;
 }
+@mixin border ($weight, $border-color){
+    border:$weight, solid, getColour($border-color);
+}
+@mixin box__shadow ($weight, $blur, $shadow-color){
+    box-shadow: $weight $weight $blur getColour($shadow-color);
+}
