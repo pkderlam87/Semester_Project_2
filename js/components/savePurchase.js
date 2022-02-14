@@ -1,3 +1,3 @@
-export function saveFavorites(favorites) {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+export function savePurchase(purchase) {
+    localStorage.setItem("purchase", JSON.stringify(purchase));
 }

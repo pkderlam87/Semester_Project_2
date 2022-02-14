@@ -5,29 +5,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is the cart in the Smoof shoes website">
+    <meta name="description" content="This is the oficial Smoof shoes products">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/yjk7ari.css">
     <link href="css/style.css" rel="stylesheet">
-    <title>Smoof shoes | Cart</title>
+    <title>Smoof shoes | cart</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon_smoof.ico">
     <script src="https://kit.fontawesome.com/1dd9a9266b.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-    </header>
-    <main>
-
-    </main>
+    <div class="wrapper">
+        <header>
+            <div class="block__shipping-delivery">
+                <p class="shipping">FREE SHIPPING. FREE 60 DAYS RETURNS</p>
+                <p class="delivery">DELIVERY WITHIN 1-2 WORKING DAYS</p>
+            </div>
+            <div class="wrap_nav_favorite_cart_login">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
+                                            class="logo"></a>
+                                    <a href="/index.html" class="home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/products.html">Products</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="favorite_cart_login">
+                    <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
+                            class="favorite_cart_login--logo"></a>
+                    <a href="/"><i class="far fa-heart"></i></a>
+                    <a href="/cart.html"><i class="ri-shopping-cart-2-line"></i></a>
+                    <a href="/login.html"><i class="far fa-user-circle"></i></a>
+                </div>
+            </div>
+            <div class="banner--cart">
+            </div>
+        </header>
+        <main>
+            <div class="message__place"></div>
+            <div class="purchase__cart"></div>
+            <div class="clear__button"></div>
+        </main>
+    </div>
     <footer>
-
+        <div class="container">
+            <div>
+                <p>&copy; 2022, Priscila Kuhn Derlam. All Rigths Reserved.</p>
+            </div>
+            <div class="social-media">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-pinterest-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    </header>
+    <script src="/js/util/cart/purchaseCart.js" type="module"></script>
 
 </html>

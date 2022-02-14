@@ -12057,7 +12057,7 @@ footer i {
   margin: 9%;
   width: 230px;
   height: 190px;
-  border: custom-orange, solid;
+  border: 1px, solid, #D96704;
   -webkit-box-shadow: 3px 3px 6px #D96704;
           box-shadow: 3px 3px 6px #D96704;
 }
@@ -12165,19 +12165,21 @@ footer i {
   }
 }
 
+.detail__products .row {
+  padding: 0 !important;
+}
+
+.detail__products .row .card-img-top {
+  padding: 0 !important;
+}
+
+.detail__products .row .card-img-top:hover {
+  -webkit-transform: scale(5px);
+          transform: scale(5px);
+}
+
 .detail__products .details__text {
   color: #FFF;
   padding-bottom: 2%;
-}
-
-.detail__products .card-img-top {
-  border: custom-orange, solid;
-  -webkit-box-shadow: 3px 3px 6px #D96704;
-          box-shadow: 3px 3px 6px #D96704;
-}
-
-.detail__products .card-img-top:hover {
-  -webkit-transform: scale(5px);
-          transform: scale(5px);
 }
 /*# sourceMappingURL=style.css.map */

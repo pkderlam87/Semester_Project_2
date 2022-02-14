@@ -1,26 +1,27 @@
-import { getExistingFavorite } from "../js/components/getExistFavorite.js";
-import { displayMessage } from "../js/utils/displayMessage.js";
-import { createContentCard } from "./common/createContentCard.js";
-const articlesContainer = document.querySelector(".articles");
-const clearButton = document.querySelector(".message-container");
+import { getExistingPurchase } from "../../components/getExistingPurchase.js";
+import { displayMessage } from "../../common/displayMessage.js";
+import { createContentCart } from "./createContentCart.js";
 
-const favorites = getExistingFavorite();
+const clearAll = document.querySelector(".clear__button")
+const purchaseContainer = document.querySelector(".purchase__cart");
 
-if (favorites.length === 0) {
-    displayMessage("noResults", "Don't have favorite articles yet", ".message-container");
+const purchaseCart = getExistingPurchase();
+
+if (purchaseCart.length === 0) {
+    displayMessage("noResults", "Don't have any products yet", ".message__place");
 }
-if (favorites.length > 0) {
-    clearButton.innerHTML = `<button class="btn" id="clearLocalStorage">Clear all <i class="far fa-trash-alt"></i></button>`;
+if (purchaseCart.length > 0) {
+    clearAll.innerHTML = `<button class="btn" id="clearLocalStorage">Clear all <i class="far fa-trash-alt"></i></button>`;
     const clearLocalStorage = document.querySelector("#clearLocalStorage");
     clearLocalStorage.addEventListener("click", clearAllFromLocalStorage);
 }
-articlesContainer.innerHTML = "";
-favorites.forEach((favorite) => {
-    createContentCard("fas", favorite);
+
+purchaseCart.forEach((product) => {
+    createContentCart(".ri-shopping-cart-2-fill", ".purchase__cart", product);
 });
 
 function clearAllFromLocalStorage() {
     localStorage.clear();
-    articlesContainer.innerHTML = "";
-    displayMessage("noResults", "Don't have more favorite articles", ".message-container");
+    purchaseContainer.innerHTML = "";
+    displayMessage("noResults", "Don't have more products", ".message__place");
 }
