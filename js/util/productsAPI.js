@@ -1,9 +1,10 @@
 import { baseUrl } from "../components/api.js";
 import { showProducts } from "./products.js";
 import { searchProducts } from "./searchProducts.js";
+import { loginMenu } from "../common/loginMenu.js";
 
 const productsUrl = baseUrl + "/products";
-
+loginMenu();
 (async function products() {
     try {
         const response = await fetch(productsUrl);

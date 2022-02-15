@@ -32,6 +32,7 @@ function createContentDetails(cssClass, item) {
                                             <i class="${cssClass} btn btn-primary--cart" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}" data-image="${baseUrl}${item.image.formats.small.url}"
                                             data-alt="${item.image.alternativeText}"></i>
                                         </div>
+                                        
                                     </div>`;
     const emptyCartButton = document.querySelector(".btn-primary--cart");
     emptyCartButton.addEventListener("click", handleClick);

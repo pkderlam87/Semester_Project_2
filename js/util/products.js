@@ -11,7 +11,7 @@ export function showProducts(json) {
             <div class="card-body">
                 <h5 class="card-title">${json[i].title}</h5>
                 <h5 class="card-text">${json[i].price} Nok</h5>
-                <a href="/cart.html" class="btn btn-primary"><i class="ri-shopping-cart-2-line"></i></a>
+                <a href="/product_detail.html?id=${json[i].id}" class="btn btn-primary">View product</a>
             </div>
             </a>
             </div>`;
