@@ -9,8 +9,9 @@ export function loginMenu() {
     if (username) {
         authLink = `<p> Hi ${username}</p>
         <button id="logout"><i class="ri-user-shared-2-fill"></i></button>`;
+
     }
     loginIcon.innerHTML = `${authLink}`;
-    //doLogout();
+    doLogout();
 }
 

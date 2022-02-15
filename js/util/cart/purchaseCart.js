@@ -1,10 +1,12 @@
 import { getExistingPurchase } from "../../components/getExistingPurchase.js";
 import { displayMessage } from "../../common/displayMessage.js";
 import { createContentCart } from "./createContentCart.js";
+import { loginMenu } from "../../common/loginMenu.js";
 
 const clearAll = document.querySelector(".clear__button")
 const purchaseContainer = document.querySelector(".purchase__cart");
 
+loginMenu();
 const purchaseCart = getExistingPurchase();
 
 if (purchaseCart.length === 0) {
