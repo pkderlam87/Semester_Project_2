@@ -2,6 +2,7 @@ import { displayMessage } from "../../common/displayMessage.js";
 import { saveToken, saveUser } from "../../components/saveTokenAndUser.js";
 import { baseUrl } from "../../components/api.js";
 
+
 export async function doLogin(username, password) {
     const url = baseUrl + "/auth/local";
     const data = JSON.stringify({ identifier: username, password: password });
