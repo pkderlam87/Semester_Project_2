@@ -21,18 +21,18 @@ function createContentDetails(cssClass, item) {
     console.log(item);
     const container = document.querySelector(".product");
     container.innerHTML = `<div class ="container detail__products">
-                                    <div class ="row"
-                                            <div class= "col">
+                                    <div class ="row no-gutters container align-items-center">
+                                            <div class= "col-md-6 container justify-content-center">
                                             <img src="${baseUrl}${item.image.formats.small.url}" class="card-img-top" alt="${item.image.alternativeText}">
                                             </div>
-                                        <div class= "col">
+                                        <div class= "col-md-6 wrap__details__text">
                                         <h1 class="details__text">${item.title}</h1>
                                         <h3 class="details__text">${item.price} Nok</h3>
                                         <p class="details__text">Description: ${item.description}</p>
                                             <i class="${cssClass} btn btn-primary--cart" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}" data-image="${baseUrl}${item.image.formats.small.url}"
                                             data-alt="${item.image.alternativeText}"></i>
                                         </div>
-                                        
+
                                     </div>`;
     const emptyCartButton = document.querySelector(".btn-primary--cart");
     emptyCartButton.addEventListener("click", handleClick);

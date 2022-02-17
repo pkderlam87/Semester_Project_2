@@ -4,6 +4,7 @@ import { searchProducts } from "./searchProducts.js";
 import { loginMenu } from "../common/loginMenu.js";
 import { displayMessage } from "../common/displayMessage.js";
 import { addNewProductForm } from "../util/login/authResources/addNewProductForm.js";
+import { getToken } from "../components/saveTokenAndUser.js";
 
 const productsUrl = baseUrl + "/products";
 loginMenu();
@@ -13,8 +14,8 @@ loginMenu();
         const json = await response.json();
         showProducts(json);
         searchProducts(json);
-        const logoutButton = document.querySelector("#logout");
-        if (logoutButton) {
+        const token = getToken();
+        if (token) {
             addNewProductForm();
         }
     } catch (error) {

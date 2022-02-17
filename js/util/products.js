@@ -4,6 +4,7 @@ export function showProducts(json) {
     const products = document.querySelector(".products");
     products.innerHTML = "";
     for (let i = 0; i < json.length; i++) {
+        console.log(baseUrl + json[i].image.formats.small.url);
         products.innerHTML += `
         <div class="card" style="width: 18rem;">
         <a class = "product" href = "/product_detail.html?id=${json[i].id}">

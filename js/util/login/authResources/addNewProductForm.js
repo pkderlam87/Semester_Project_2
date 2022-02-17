@@ -1,4 +1,4 @@
-import { addProduct } from "./addProduct.js";
+//import { addProduct } from "./addProduct.js";
 
 export function addNewProductForm() {
     const addNewProductContainer = document.querySelector(".auth__add__new__product");
@@ -8,8 +8,9 @@ export function addNewProductForm() {
     function showForm() {
         addNewProductContainer.innerHTML = `
         <h1>Add new Product</h1>
+        <div class = "message__form"></div>
         <div class="container">
-    <form>
+    <form id="formAdd">
     <div>
         <label for =  "title">Product's title</label>
         <input id="title" type= "text"/>
@@ -32,7 +33,7 @@ export function addNewProductForm() {
     </div>
     <button class="btn btn-primary--add" type="submit">Add <i class="ri-add-circle-line"></i></button>
     </form>
-    </div>`
+    </div>`;
+        //addProduct();
     }
-    addProduct();
 }

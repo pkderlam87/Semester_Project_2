@@ -34,7 +34,7 @@
    
 }
 .btn-primary--cart{
-    @include button (80%, 1.5rem);
+    @include button (80%, 2.3rem);
     padding: 3% 0;
     margin: 3% auto !important;
     &:hover{
