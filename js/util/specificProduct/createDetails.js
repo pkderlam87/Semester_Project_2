@@ -18,7 +18,6 @@ export function createDetails(details) {
     });
 }
 function createContentDetails(cssClass, item) {
-    console.log(item);
     const container = document.querySelector(".product");
     container.innerHTML = `<div class ="container detail__products">
                                     <div class ="row no-gutters container align-items-center">

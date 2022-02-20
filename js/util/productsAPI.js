@@ -3,7 +3,7 @@ import { showProducts } from "./products.js";
 import { searchProducts } from "./searchProducts.js";
 import { loginMenu } from "../common/loginMenu.js";
 import { displayMessage } from "../common/displayMessage.js";
-import { addNewProductForm } from "../util/login/authResources/addNewProductForm.js";
+import { newResources } from "../util/login/authResources/newResources.js";
 import { getToken } from "../components/saveTokenAndUser.js";
 
 const productsUrl = baseUrl + "/products";
@@ -16,7 +16,7 @@ loginMenu();
         searchProducts(json);
         const token = getToken();
         if (token) {
-            addNewProductForm();
+            newResources();
         }
     } catch (error) {
         displayMessage("error", `Something went wrong with the API call. ${error}`, ".message__place");

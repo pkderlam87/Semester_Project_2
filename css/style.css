@@ -11556,6 +11556,10 @@ body {
           flex: 1 0 auto;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 @font-face {
   font-family: "Payback";
   src: url("../../fonts/PaybAck.ttf");
