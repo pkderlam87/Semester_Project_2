@@ -8,3 +8,6 @@
 @mixin box__shadow ($weight, $blur, $shadow-color){
     box-shadow: $weight $weight $blur getColour($shadow-color);
 }
+@mixin border-radius ($round){
+    border-radius: $round;
+}

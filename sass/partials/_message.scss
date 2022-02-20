@@ -16,7 +16,7 @@
 .noResults{
     @extend .message__container;
     color: darken(getColour(primary-colour), 10%);
-    background-color: darken(getColour(custom-cyan), 10%);
+    background-color: lighten(getColour(custom-cyan), 15%);
     box-shadow: 3px 3px 16px getColour(shadow);
 }
 .error{

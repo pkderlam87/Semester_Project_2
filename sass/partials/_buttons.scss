@@ -12,10 +12,17 @@
         background-color: getColour(custom-cyan);
         color: darken(getColour(primary-colour), 10%);
         border: 3px solid getColour(custom-cyan);
+        i{
+            color: darken(getColour(primary-colour), 10%);
+        }
     }
     &:focus{
         border: 3px solid getColour(custom-cyan);
     }
+}
+.btn-primary{
+    margin-top: 6%;
+    font-size: 1.5rem;
 }
 .btn-primary--product{
     @include button (50%, 1.5rem);
@@ -44,8 +51,32 @@
         }
     }
 }
-.btn-primary--search:hover{
-    i{
-        color: darken(getColour(primary-colour), 10%);
+.btn-primary--add{
+    padding: 3% 10%;
+    margin: 3% auto;
+    display: flex;
+    gap: 3%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    max-width: 75%;
+    @media (min-width:$tablet-width) {
+        max-width: 65%;
     }
+}
+.clear__button{
+    display: grid;
+    .btn-primary--clear__cart{
+        max-width: 60%;
+        margin: 4% auto;
+    }
+}
+.submit{
+    margin-top: 6%;
+    padding: 5% 20%;
+    font-size: 1.5rem;
+}
+.btn-delete{
+    color: getColour(light-yellow);
+    border: 3px solid getColour(light-yellow);
 }

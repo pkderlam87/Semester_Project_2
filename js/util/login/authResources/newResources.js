@@ -58,6 +58,6 @@ function changeButton(buttonCard) {
     });
     const deleteButton = document.querySelectorAll(".btn-delete");
     deleteButton.forEach(element => {
-        element.addEventListener("click", deleteProduct());
+        element.addEventListener("click", deleteProduct);
     });
 }

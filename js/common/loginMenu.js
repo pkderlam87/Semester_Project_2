@@ -7,8 +7,9 @@ export function loginMenu() {
     const username = getUsername();
     let authLink = `<a href ="/login.html" class = "${pathname === "/login.html" ? "active" : ""}"><i class="far fa-user-circle"></i></a>`;
     if (username) {
-        authLink = `<p> Hi ${username}</p>
-        <button id="logout"><i class="ri-user-shared-2-fill"></i></button>`;
+        authLink = `<div class= "user">
+        <p class="greetings"> Hi ${username}</p>
+        <i class="ri-user-shared-2-fill" id="logout"></i></div>`;
 
     }
     loginIcon.innerHTML = `${authLink}`;

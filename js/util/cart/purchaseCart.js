@@ -13,17 +13,18 @@ if (purchaseCart.length === 0) {
     displayMessage("noResults", "Don't have any products yet", ".message__place");
 }
 if (purchaseCart.length > 0) {
-    clearAll.innerHTML = `<button class="btn" id="clearLocalStorage">Clear all <i class="far fa-trash-alt"></i></button>`;
+    clearAll.innerHTML = `<button class="btn btn-primary--clear__cart" id="clearLocalStorage">Clear all <i class="far fa-trash-alt"></i></button>`;
     const clearLocalStorage = document.querySelector("#clearLocalStorage");
     clearLocalStorage.addEventListener("click", clearAllFromLocalStorage);
 }
 
 purchaseCart.forEach((product) => {
-    createContentCart(".ri-shopping-cart-2-fill", ".purchase__cart", product);
+    createContentCart(".purchase__cart", product);
 });
 
 function clearAllFromLocalStorage() {
     localStorage.clear();
     purchaseContainer.innerHTML = "";
+    clearLocalStorage.style.display = "none";
     displayMessage("noResults", "Don't have more products", ".message__place");
 }

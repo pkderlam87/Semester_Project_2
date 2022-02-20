@@ -1,0 +1,31 @@
+#login__form{
+    text-align: center;
+    padding: 6%;
+    margin:$center;
+    background-color: getColour(primary-colour);
+
+        h1,
+        label{
+        color: getColour(secondary-colour);
+        margin: 6% auto;
+        }
+
+        input{
+            padding: auto;
+            @include border-radius (5px);
+        }
+}
+.login__icon{
+    .user{
+        display: flex;
+        width: 84px;
+        align-items: center;
+        @media(min-width: $tablet-width){
+            width: 125px;
+            justify-content: space-between;
+        }
+    }
+    .greetings{
+        color: getColour(secondary-colour);
+    }
+}

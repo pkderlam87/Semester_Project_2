@@ -7,7 +7,7 @@ export function showProducts(json) {
         products.innerHTML += `
         <div>
         <a class = "product" id="product" href = "/product_detail.html?id=${json[i].id}">
-        <div class="card" style="width: 18rem;" id= "${json[i].id}">
+        <div class="card" style="width: 18rem;" id= "id ${json[i].id}">
             <img src="${baseUrl}${json[i].image.formats.small.url}" class="card-img-top" alt="${json[i].image.alternativeText}">
             <div class="card-body">
                 <h5 class="card-title">${json[i].title}</h5>
