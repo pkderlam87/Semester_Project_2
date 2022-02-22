@@ -1,7 +1,7 @@
 import { displayMessage } from "../../../common/displayMessage.js";
 import { getToken } from "../../../components/saveTokenAndUser.js";
 import { baseUrl } from "../../../components/api.js";
-
+let myNewProductObject = {};
 export function addProduct() {
     const form = document.querySelector("#formAdd");
     const title = document.querySelector("#title");
@@ -15,23 +15,27 @@ export function addProduct() {
         const titleValue = title.value.trim();
         const priceValue = parseFloat(price.value);
         const descriptionValue = description.value.trim();
-        checkImage(image.value);
+        const imageValue = image.value.trim();
+        checkURL(imageValue);
 
-        if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 /*!checkURL(imageValue)*/) {
+        if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || !checkURL(imageValue)) {
             return displayMessage("noResults", "Please supply proper values", ".message__form");
+        } else {
+            addProductAPI(titleValue, priceValue, descriptionValue, imageValue, featuredProduct.checked, form);
         }
-        //addProductAPI(titleValue, priceValue, descriptionValue, checkImage, featuredProduct.checked);
+
     }
 }
-let myNewProductObject = {};
-async function addProductAPI(title, price, description, image, featured) {
+
+async function addProductAPI(title, price, description, image, featured, form) {
     const url = baseUrl + "/products";
-    const imageURL = baseUrl + "/uploads/";
+
     myNewProductObject = {
         title: title,
         price: price,
         description: description,
         featured: featured,
+        image_url: image,
     };
     const data = JSON.stringify(myNewProductObject);
     const token = getToken();
@@ -59,17 +63,14 @@ async function addProductAPI(title, price, description, image, featured) {
         displayMessage("error", "An error occurred, try later &#128522;", ".message__form");
     }
 }
+export function checkURL(image) {
+    const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    let regex = new RegExp(expression);
 
-function checkImage(image) {
-    console.log(myNewProductObject);
-    const formData = new FormData(image);
-    formData.append('image', myNewProductObject);
-    /*axios.post("http://localhost:1337/upload", formData)
-    .then((response)=>{
-        //after success
-    }).catch((error)=>{
-        //handle error
-    })*/
-    console.log(formData);
-    return uploadImage;
+    if (image.match(regex)) {
+        return true;
+    } else {
+        displayMessage("error", "Please type a valid URL", ".message__form");
+        return false;
+    }
 }

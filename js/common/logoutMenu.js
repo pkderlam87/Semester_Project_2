@@ -5,6 +5,7 @@ export function doLogout() {
             const confirmMessage = confirm("Do you want to logout?");
             if (confirmMessage) {
                 localStorage.removeItem("user");
+                localStorage.removeItem("token");
                 location.href = "/index.html";
             }
         }

@@ -1,7 +1,7 @@
 export function deleteProduct(event) {
     console.log(event);
     const itemId = document.querySelectorAll("#id");
-    console.log(itemId);
+    //console.log(itemId);
     //itemId = itemId.slice(2);
     //console.log(itemId);
 

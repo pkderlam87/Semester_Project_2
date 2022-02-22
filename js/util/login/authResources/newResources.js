@@ -28,8 +28,8 @@ export function newResources() {
                     <textarea id="description" required></textarea>
                 </div>
                 <div>
-                    <label for = "image">Image</label>
-                    <input id="image" type="file" placeholder="Add a .jpg or .png file" required>
+                    <label for = "image">Image Url</label>
+                    <input id="image" required/>
                 </div>
                 <div>
                     <label for="featured">Featured</label>
@@ -40,9 +40,6 @@ export function newResources() {
         </div>`;
         addProduct();
     }
-
-    const buttonCard = document.querySelectorAll(".button__card");
-    changeButton(buttonCard);
 }
 
 
@@ -52,7 +49,7 @@ function disableLink(productLink) {
     }
 }
 
-function changeButton(buttonCard) {
+/*function changeButton(buttonCard) {
     buttonCard.forEach(element => {
         element.innerHTML = `<div class="container justify-content-between"><i class="ri-delete-bin-2-fill btn btn-delete"></i> <a href="/edit.html"><i class="ri-edit-line btn"></i></a></div>`;
     });
@@ -60,4 +57,4 @@ function changeButton(buttonCard) {
     deleteButton.forEach(element => {
         element.addEventListener("click", deleteProduct);
     });
-}
+}*/
