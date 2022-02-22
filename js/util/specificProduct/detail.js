@@ -13,8 +13,6 @@ if (!id) {
 }
 const productURL = baseUrl + "/products/" + id;
 
-
-
 (async function () {
     try {
         const response = await fetch(productURL);
