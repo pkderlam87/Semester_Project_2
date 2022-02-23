@@ -15,10 +15,12 @@ export function addProduct() {
         const titleValue = title.value.trim();
         const priceValue = parseFloat(price.value);
         const descriptionValue = description.value.trim();
-        const imageValue = image.value.trim();
-        checkURL(imageValue);
-
-        if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || !checkURL(imageValue)) {
+        let imageValue = "";
+        checkURL(image.value.trim());
+        if (checkURL(image.value.trim())) {
+            imageValue = image.value.trim();
+        }
+        if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || !checkURL(image.value.trim())) {
             return displayMessage("noResults", "Please supply proper values", ".message__form");
         } else {
             addProductAPI(titleValue, priceValue, descriptionValue, imageValue, featuredProduct.checked, form);
