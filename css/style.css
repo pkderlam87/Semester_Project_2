@@ -12274,6 +12274,16 @@ footer i {
   padding-bottom: 2%;
 }
 
+.detail__products .image__url__details {
+  max-width: 70%;
+}
+
+@media (max-width: 998px) {
+  .detail__products .image__file__details {
+    max-width: 90%;
+  }
+}
+
 .product__purchased {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12328,24 +12338,6 @@ footer i {
   }
 }
 
-#login__form {
-  text-align: center;
-  padding: 6%;
-  margin: 0 auto;
-  background-color: #3D3D3D;
-}
-
-#login__form h1, #login__form .h1,
-#login__form label {
-  color: #FFF;
-  margin: 6% auto;
-}
-
-#login__form input {
-  padding: auto;
-  border-radius: 5px;
-}
-
 .login__icon .user {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12367,5 +12359,60 @@ footer i {
 
 .login__icon .greetings {
   color: #FFF;
+}
+
+.form, #login__form, .auth__add__new__product, .edit__form {
+  text-align: center;
+  padding: 6%;
+  margin: 0 auto;
+  background-color: #3D3D3D;
+}
+
+.form h1, #login__form h1, .auth__add__new__product h1, .edit__form h1, .form .h1, #login__form .h1, .auth__add__new__product .h1, .edit__form .h1,
+.form label,
+#login__form label,
+.auth__add__new__product label,
+.edit__form label,
+.form h4,
+#login__form h4,
+.auth__add__new__product h4,
+.edit__form h4,
+.form .h4,
+#login__form .h4,
+.auth__add__new__product .h4,
+.edit__form .h4 {
+  color: #FFF;
+  margin: 6% auto;
+}
+
+.form input, #login__form input, .auth__add__new__product input, .edit__form input {
+  padding: auto;
+  border-radius: 5px;
+}
+
+.form #featuredProduct, #login__form #featuredProduct, .auth__add__new__product #featuredProduct, .edit__form #featuredProduct {
+  width: 20px;
+  height: 20px;
+  margin-left: 1%;
+}
+
+.form #featuredProduct:checked, #login__form #featuredProduct:checked, .auth__add__new__product #featuredProduct:checked, .edit__form #featuredProduct:checked {
+  background-color: #FFF;
+  border: 3px solid #D96704;
+}
+
+.auth__add__new__product {
+  padding: 0;
+}
+
+.edit__form label {
+  color: #3D3D3D;
+  margin: auto;
+  text-align: left;
+}
+
+.edit__form .edit__image {
+  max-width: 30%;
+  margin: 1%;
 }
 /*# sourceMappingURL=style.css.map */

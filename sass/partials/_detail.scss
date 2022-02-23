@@ -25,4 +25,12 @@
         color: getColour(secondary-colour);
         padding-bottom: 2%;
     }
+    .image__url__details{
+        max-width: 70%;
+    }
+    .image__file__details{
+        @media (max-width:$desktop-width) {
+            max-width: 90%;
+    }
+}
 }

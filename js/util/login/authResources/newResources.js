@@ -13,23 +13,23 @@ export function newResources() {
         addNewProductContainer.innerHTML = `
         <h1>Add new Product</h1>
         <div class = "message__form"></div>
-        <div class="container">
+        <div class="container justify-content-center">
             <form id="formAdd">
                 <div>
                     <label for =  "title">Product's title</label>
                     <input id="title" type= "text" required/>
                 </div>
                 <div>
-                    <label for = "price">Price</label>
-                    <input id="price" required/><p>Nok</p>
+                    <label for = "price">Price (Nok)</label>
+                    <input id="price" required/>
                 </div>
                 <div>
                     <label for = "description">Description</label>
-                    <textarea id="description" required></textarea>
+                    <textarea id="description" style="height: 200px"required></textarea>
                 </div>
                 <div>
                     <label for = "image">Image Url</label>
-                    <input id="image" required/>
+                    <textarea id="image" style="height: 100px" required></textarea>
                 </div>
                 <div>
                     <label for="featured">Featured</label>

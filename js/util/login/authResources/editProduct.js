@@ -5,13 +5,13 @@ import { getToken } from "../../../components/saveTokenAndUser.js";
 import { checkURL } from "./addProduct.js";
 
 const container = document.querySelector(".container");
-
+let form = "";
 loginMenu();
-
+let id = "";
 (function editProduct() {
     const queryString = document.location.search;
     const params = new URLSearchParams(queryString);
-    const id = params.get("id");
+    id = params.get("id");
 
     if (!id) {
         document.location.href = "/products.html";
@@ -35,7 +35,7 @@ function createEditFields(editionInfo) {
     container.innerHTML = "";
     container.innerHTML = `<form class="edit__form">
                     <div class="message-container"></div>
-                    <h2>Here you can edit the ${editionInfo.title}</h2>
+                    <h1>Here you can edit the ${editionInfo.title}</h1>
                         <h4>Product's title</h4>
                         <div class="form-floating mb-3">
                             <input type="title" class="form-control" id="floatingInput">  <label for="floatingInput">${editionInfo.title}</label>
@@ -47,8 +47,8 @@ function createEditFields(editionInfo) {
                         </div>
                     <h4>Product's description</h4>
                     <div class="form-floating">
-                            <textarea class="form-control" id="floatingTextarea2" style="height: 300px" type="description"></textarea>
-                            <label for="floatingTextarea2">${editionInfo.description}</label>
+                            <textarea class="form-control" id="floatingTextarea2" style="height: 200px" type="description"></textarea>
+                            <label for="floatingTextarea2">${editionInfo.description.substring(0, 65)}[...]</label>
                     </div>
                     <h4>Product's image</h4>
                     <div id="editImagePlace"></div>
@@ -58,23 +58,23 @@ function createEditFields(editionInfo) {
             </div>
             </form>`;
     const editImagePlace = document.querySelector("#editImagePlace");
-    showImageToEdit(editImagePlace, editionInfo);
+    showImage(editImagePlace, editionInfo);
     const featuredPlace = document.querySelector(".featured__place");
     showBooleanFeatured(featuredPlace, editionInfo);
-    const form = document.querySelector(".edit__form");
+    form = document.querySelector(".edit__form");
     form.addEventListener("submit", submitForm);
 }
 
-function showImageToEdit(place, editionInfo) {
+export function showImage(place, editionInfo) {
     if (editionInfo.image_url === null || editionInfo.image_url.length === 0) {
         place.innerHTML = `<div class="form-floating mb-auto">
     <img src="${baseUrl}${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
-    <textarea class="form-control" id="floatingTextarea2" style="height: 200px" type="image"></textarea>
+    <textarea class="form-control" id="floatingTextarea2" style="height: 150px" type="image"></textarea>
     </div>`;
     } else {
         place.innerHTML = `<div class="form-floating mb-auto">
     <img src="${editionInfo.image_url}" alt = "${editionInfo.title}" class="edit__image">    
-    <textarea class="form-control imageUrlToCheck" id="floatingTextarea2" style="height: 200px" type="image"></textarea>
+    <textarea class="form-control imageUrlToCheck" id="floatingTextarea2" style="height: 150px" type="image"></textarea>
     </div>`;
     }
 }
@@ -97,13 +97,46 @@ function submitForm(event) {
     if (checkURL(event.target[3].value.trim())) {
         imageValue = event.target[3].value.trim();
     }
-    const featuredValue = event.target[4].value;
-
-    console.log(event.target[4].checked);
-
+    const featuredValue = event.target[4].checked;
+    if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || !checkURL(event.target[3].value.trim())) {
+        return displayMessage("noResults", "Please supply proper values", ".message__form");
+    } else {
+        saveProductAPI(titleValue, priceValue, descriptionValue, imageValue, featuredValue, form);
+    }
+}
+async function saveProductAPI(title, price, description, image, featured, form) {
+    const url = baseUrl + "/products/" + id;
+    const data = JSON.stringify({
+        title: title,
+        price: price,
+        description: description,
+        featured: featured,
+        image_url: image,
+    })
+    const token = getToken();
+    const options = {
+        method: "PUT",
+        body: data,
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+    };
+    try {
+        const response = await fetch(url, options);
+        const json = await response.json();
+        console.log(json);
+        if (json.updated_at) {
+            displayMessage("results", "Product updated", ".message__place");
+            form.style.display = "none";
+        }
+        if (json.error) {
+            displayMessage("noResults", json.message, ".message__place");
+        }
+    } catch (error) {
+        console.log(error);
+        displayMessage("error", error, ".message__place");
+    }
 }
 
 
-/*        const imageUrlToCheck = document.querySelector(".imageUrlToCheck").value;
-        console.log(imageUrlToCheck);
-        //checkURL(imageUrlToCheck);*/

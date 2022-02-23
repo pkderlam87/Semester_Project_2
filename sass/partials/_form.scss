@@ -1,0 +1,46 @@
+.form{
+    text-align: center;
+    padding: 6%;
+    margin:$center;
+    background-color: getColour(primary-colour);
+
+        h1,
+        label,
+        h4{
+        color: getColour(secondary-colour);
+        margin: 6% auto;
+        }
+
+        input{
+            padding: auto;
+            @include border-radius (5px);
+        }
+        #featuredProduct{
+            width: 20px;
+            height: 20px;
+            margin-left: 1%;
+            &:checked{
+                background-color: getColour(secondary-colour);
+                border: 3px solid getColour(custom-orange);
+            }
+        }
+}
+#login__form{
+    @extend .form;
+}
+.auth__add__new__product{
+    @extend .form;
+    padding: 0;
+}
+.edit__form{
+    @extend .form;
+    label{
+        color: getColour(primary-colour);
+        margin: auto;
+        text-align: left;
+    }
+    .edit__image{
+        max-width: 30%;
+        margin: 1%;
+    }
+}
