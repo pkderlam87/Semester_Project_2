@@ -9,7 +9,7 @@ export function loginMenu() {
     if (username) {
         authLink = `<div class= "user">
         <p class="greetings"> Hi ${username}</p>
-        <i class="ri-user-shared-2-fill" id="logout"></i></div>`;
+        <i class="ri-user-shared-2-fill" id="logout" title="Logout"></i></div>`;
 
     }
     loginIcon.innerHTML = `${authLink}`;

@@ -5,7 +5,7 @@ import { loginMenu } from "../../common/loginMenu.js";
 
 const clearAll = document.querySelector(".clear__button")
 const purchaseContainer = document.querySelector(".purchase__cart");
-
+const cart = document.querySelector("#cart");
 loginMenu();
 const purchaseCart = getExistingPurchase();
 
@@ -23,8 +23,9 @@ purchaseCart.forEach((product) => {
 });
 
 function clearAllFromLocalStorage() {
-    localStorage.clear();
+    localStorage.removeItem("purchase");
     purchaseContainer.innerHTML = "";
     clearLocalStorage.style.display = "none";
+    cart.innerHTML = `<i class="ri-shopping-cart-2-line" title="Cart is empty"></i>`;
     displayMessage("noResults", "Don't have more products", ".message__place");
 }

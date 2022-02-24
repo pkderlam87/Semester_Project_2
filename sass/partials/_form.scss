@@ -31,6 +31,16 @@
 .auth__add__new__product{
     @extend .form;
     padding: 0;
+    #formAdd{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-content: center;
+        grid-template-rows: repeat(9, 1fr);
+    }
+        &:nth-child(odd){
+            grid-row: 1;
+        }
 }
 .edit__form{
     @extend .form;
