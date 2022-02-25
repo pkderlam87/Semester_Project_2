@@ -8,18 +8,17 @@
     font-weight: bold;
     box-shadow: 2px 2px 5px getColour(shadow);
     
-    &:hover{
-        background-color: getColour(custom-cyan);
-        color: darken(getColour(primary-colour), 10%);
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus{
+        background-color: getColour(custom-cyan) !important;
+        color: darken(getColour(primary-colour), 10%) !important;
         border: 3px solid getColour(custom-cyan);
         i{
-            color: darken(getColour(primary-colour), 10%);
+            color: darken(getColour(primary-colour), 10%) !important;
         }
     }
-    &:focus{
-        border: 3px solid getColour(custom-cyan);
-    }
-    
 }
 .btn-primary{
     margin-top: 6%;

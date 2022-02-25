@@ -12041,18 +12041,14 @@ footer i {
           box-shadow: 2px 2px 5px #E3E3E3;
 }
 
-.btn:hover {
-  background-color: #69E1FC;
-  color: #242424;
+.btn:hover, .btn:active, .btn:visited, .btn:focus {
+  background-color: #69E1FC !important;
+  color: #242424 !important;
   border: 3px solid #69E1FC;
 }
 
-.btn:hover i {
-  color: #242424;
-}
-
-.btn:focus {
-  border: 3px solid #69E1FC;
+.btn:hover i, .btn:active i, .btn:visited i, .btn:focus i {
+  color: #242424 !important;
 }
 
 .btn-primary {
