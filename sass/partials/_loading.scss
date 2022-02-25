@@ -1,0 +1,20 @@
+.loading{
+    .sneaker{
+        max-width: 30%;
+        position: relative;
+        animation: walk 2s infinite;
+    }
+    @keyframes walk{
+        0%{left: 600px;}
+        10%{left: 550px;}
+        20%{left: 500px;}
+        30%{left: 450px;}
+        40%{left: 400px;}
+        50%{left: 350px;}
+        60%{left: 300px;}
+        70%{left: 250px;}
+        80%{left: 200px;}
+        90%{left: 150px;}
+        100%{left: 100px;}
+    }
+}

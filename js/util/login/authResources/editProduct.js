@@ -36,25 +36,28 @@ function createEditFields(editionInfo) {
     container.innerHTML = `<form class="edit__form">
                     <div class="message-container"></div>
                     <h1>Here you can edit the ${editionInfo.title}</h1>
-                        <h4>Product's title</h4>
-                        <div class="form-floating mb-3">
-                            <input type="title" class="form-control" id="floatingInput">  <label for="floatingInput">${editionInfo.title}</label>
+                        <h4 class="heading__title">Product's title</h4>
+                        <div class="form-floating title">
+                            <input type="title" class="form-control" id="floatingInput">
+                            <label for="floatingInput">${editionInfo.title}</label>
                         </div>
-                        <h4>Product's price</h4>
-                        <div class="form-floating mb-3">
+                        <h4 class="heading__price">Product's price</h4>
+                        <div class="form-floating price">
                             <input type="price" class="form-control" id="floatingInput">
                             <label for="floatingInput">${editionInfo.price} Nok</label>
                         </div>
-                    <h4>Product's description</h4>
-                    <div class="form-floating">
+                    <h4 class="heading__description">Product's description</h4>
+                    <div class="form-floating description">
                             <textarea class="form-control" id="floatingTextarea2" style="height: 200px" type="description"></textarea>
-                            <label for="floatingTextarea2">${editionInfo.description.substring(0, 65)}[...]</label>
+                            <label for="floatingTextarea2">${editionInfo.description.substring(0, 30)}[...]</label>
                     </div>
-                    <h4>Product's image</h4>
+                    <h4 class="heading__image">Product's image</h4>
                     <div id="editImagePlace"></div>
-                    <h4>Featured product</h4>
+                    <div class = "featured">
+                    <h4 class="heading__featured">Featured product</h4>
                     <div class="featured__place"></div>
-                    <button class="btn btn-primary" type="submit" id="update">Save <i class="ri-edit-line"></i></button>
+                    </div>
+                    <button class="btn btn-primary update" type="submit" id="update">Save <i class="ri-edit-line"></i></button>
             </div>
             </form>`;
     const editImagePlace = document.querySelector("#editImagePlace");
@@ -67,12 +70,12 @@ function createEditFields(editionInfo) {
 
 export function showImage(place, editionInfo) {
     if (editionInfo.image_url === null || editionInfo.image_url.length === 0) {
-        place.innerHTML = `<div class="form-floating mb-auto">
+        place.innerHTML = `<div class="form-floating mb-auto image">
     <img src="${baseUrl}${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
     <textarea class="form-control" id="floatingTextarea2" style="height: 150px" type="image"></textarea>
     </div>`;
     } else {
-        place.innerHTML = `<div class="form-floating mb-auto">
+        place.innerHTML = `<div class="form-floating mb-auto image">
     <img src="${editionInfo.image_url}" alt = "${editionInfo.title}" class="edit__image">    
     <textarea class="form-control imageUrlToCheck" id="floatingTextarea2" style="height: 150px" type="image"></textarea>
     </div>`;
@@ -80,11 +83,9 @@ export function showImage(place, editionInfo) {
 }
 function showBooleanFeatured(place, editionInfo) {
     if (editionInfo.featured === false) {
-        place.innerHTML = `<label for="featured">Featured</label>
-        <input type="checkbox" value="featured" id="featuredProduct"/>`
+        place.innerHTML = `<input type="checkbox" value="featured" id="featuredProduct" class="form-check-input"/>`
     } else {
-        place.innerHTML = `<label for="featured">Featured</label>
-        <input type="checkbox" id="featuredProduct" checked/>`
+        place.innerHTML = `<input type="checkbox" id="featuredProduct" checked class="form-check-input"/>`
     }
 }
 function submitForm(event) {

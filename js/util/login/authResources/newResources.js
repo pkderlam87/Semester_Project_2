@@ -14,26 +14,27 @@ export function newResources() {
         <h1>Add new Product</h1>
         <div class = "message__form"></div>
         <div class="container justify-content-center">
-            <form id="formAdd">
-                <div>
-                    <label for =  "title">Product's title</label>
-                    <input id="title" type= "text" required/>
+            <form id="formAdd" class="needs-validation" novalidate>
+                <div class="title">
+                    <label for =  "title" class="form-label">Product's title</label>
+                    <input id="title" type= "text" class="form-control" required/>
                 </div>
-                <div>
-                    <label for = "price">Price (Nok)</label>
-                    <input id="price" required/>
+                <div class="price">
+                    <label for = "price" class="form-label">Price (Nok)</label>
+                    <input id="validationCustom05" class="form-control price" required/>
+                    <div class="invalid-feedback">Please provide a valid price (use "." instead ",")</div>
                 </div>
-                <div>
-                    <label for = "description">Description</label>
-                    <textarea id="description" style="height: 200px"required></textarea>
+                <div class="description">
+                    <label for = "description" class="form-label">Description</label>
+                    <textarea id="description" style="height: 150px" required class="form-control"></textarea>
                 </div>
-                <div>
-                    <label for = "image">Image Url</label>
-                    <textarea id="image" style="height: 100px" required></textarea>
+                <div class="image">
+                    <label for = "image" class="form-label">Image Url</label>
+                    <textarea id="image" style="height: 50px" required class="form-control"></textarea>
                 </div>
-                <div>
-                    <label for="featured">Featured</label>
-                    <input type="checkbox" value="featured" id="featuredProduct"/>
+                <div class="form-check container">
+                    <input type="checkbox" value="featured" id="featuredProduct" class="form-check-input"/>
+                    <label for="featured" class="form-check-label">Featured</label>
                     </div>
                 <button class="btn btn-primary--add" type="submit">Add <i class="ri-add-circle-line"></i></button>
             </form>

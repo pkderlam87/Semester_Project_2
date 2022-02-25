@@ -5,7 +5,8 @@
 .ri-user-shared-2-fill,
 .ri-add-circle-line,
 .ri-delete-bin-2-fill,
-.ri-edit-line{
+.ri-edit-line,
+.ri-footprint-fill{
     color: getColour(custom-cyan);
     font-size: 1.5rem;
     @media (min-width:$tablet-width) {

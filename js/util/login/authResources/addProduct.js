@@ -2,10 +2,11 @@ import { displayMessage } from "../../../common/displayMessage.js";
 import { getToken } from "../../../components/saveTokenAndUser.js";
 import { baseUrl } from "../../../components/api.js";
 let myNewProductObject = {};
+
 export function addProduct() {
     const form = document.querySelector("#formAdd");
     const title = document.querySelector("#title");
-    const price = document.querySelector("#price");
+    const price = document.querySelector(".price");
     const description = document.querySelector("#description");
     const image = document.querySelector("#image");
     const featuredProduct = document.querySelector("#featuredProduct");
@@ -55,6 +56,9 @@ async function addProductAPI(title, price, description, image, featured, form) {
         if (json.created_at) {
             displayMessage("results", "Product created", ".message__form");
             form.reset();
+            setTimeout(function () {
+                location.href = "/products.html";
+            }, 2000);
         }
         if (json.error) {
             displayMessage("noResults", json.message, ".message__form");
@@ -72,7 +76,7 @@ export function checkURL(image) {
     if (image.match(regex)) {
         return true;
     } else {
-        displayMessage("error", "Please type a valid URL", ".message__form");
+        displayMessage("error", "Please provide a valid url (e.g.: www.smoofshoes.com)", ".message__form");
         return false;
     }
 }
