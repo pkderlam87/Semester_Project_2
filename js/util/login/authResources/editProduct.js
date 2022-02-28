@@ -38,17 +38,18 @@ function createEditFields(editionInfo) {
                     <h1>Here you can edit the ${editionInfo.title}</h1>
                         <h4 class="heading__title">Product's title</h4>
                         <div class="form-floating title">
-                            <input type="title" class="form-control" id="floatingInput">
+                            <input type="title" class="form-control" id="floatingInput" required>
                             <label for="floatingInput">${editionInfo.title}</label>
                         </div>
                         <h4 class="heading__price">Product's price</h4>
                         <div class="form-floating price">
-                            <input type="price" class="form-control" id="floatingInput">
+                            <input type="price" class="form-control" id="floatingInput" required>
                             <label for="floatingInput">${editionInfo.price} Nok</label>
+                            <div class="invalid-feedback fail__price">Please provide a valid price (use "." instead ",")</div>
                         </div>
                     <h4 class="heading__description">Product's description</h4>
                     <div class="form-floating description">
-                            <textarea class="form-control" id="floatingTextarea2" style="height: 200px" type="description"></textarea>
+                            <textarea class="form-control" id="floatingTextarea2" style="height: 200px" type="description" required></textarea>
                             <label for="floatingTextarea2">${editionInfo.description.substring(0, 30)}[...]</label>
                     </div>
                     <h4 class="heading__image">Product's image</h4>
@@ -72,13 +73,15 @@ export function showImage(place, editionInfo) {
     if (editionInfo.image_url === null || editionInfo.image_url.length === 0) {
         place.innerHTML = `<div class="form-floating mb-auto image">
     <img src="${baseUrl}${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
-    <textarea class="form-control" id="floatingTextarea2" style="height: 150px" type="image"></textarea>
-    </div>`;
+    <textarea class="form-control" id="floatingTextarea2" style="height: 150px" type="image" required></textarea>
+    </div>
+    <div class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</div>`;
     } else {
         place.innerHTML = `<div class="form-floating mb-auto image">
     <img src="${editionInfo.image_url}" alt = "${editionInfo.title}" class="edit__image">    
-    <textarea class="form-control imageUrlToCheck" id="floatingTextarea2" style="height: 150px" type="image"></textarea>
-    </div>`;
+    <textarea class="form-control imageUrlToCheck" id="floatingTextarea2" style="height: 150px" type="image" required></textarea>
+    </div>
+    <div class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</div>`;
     }
 }
 function showBooleanFeatured(place, editionInfo) {
@@ -93,15 +96,23 @@ function submitForm(event) {
     const titleValue = event.target[0].value.trim();
     const priceValue = parseFloat(event.target[1].value);
     const descriptionValue = event.target[2].value.trim();
+    const invalidFeedbackPrice = document.querySelector(".fail__price");
+    const invalidFeedbackUrl = document.querySelector(".fail__url");
     let imageValue = "";
     checkURL(event.target[3].value.trim());
     if (checkURL(event.target[3].value.trim())) {
         imageValue = event.target[3].value.trim();
+        invalidFeedbackUrl.style.display = "none";
+    } else {
+        invalidFeedbackUrl.style.display = "block";
     }
     const featuredValue = event.target[4].checked;
-    if (titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || !checkURL(event.target[3].value.trim())) {
-        return displayMessage("noResults", "Please supply proper values", ".message__form");
+    if (isNaN(priceValue)) {
+        invalidFeedbackPrice.style.display = "block";
     } else {
+        invalidFeedbackPrice.style.display = "none";
+    };
+    if (priceValue && imageValue.length > 0) {
         saveProductAPI(titleValue, priceValue, descriptionValue, imageValue, featuredValue, form);
     }
 }

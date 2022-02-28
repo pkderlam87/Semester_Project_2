@@ -14,15 +14,15 @@ export function newResources() {
         <h1>Add new Product</h1>
         <div class = "message__form"></div>
         <div class="container justify-content-center">
-            <form id="formAdd" class="needs-validation" novalidate>
+            <form id="formAdd">
                 <div class="title">
                     <label for =  "title" class="form-label">Product's title</label>
                     <input id="title" type= "text" class="form-control" required/>
                 </div>
                 <div class="price">
                     <label for = "price" class="form-label">Price (Nok)</label>
-                    <input id="validationCustom05" class="form-control price" required/>
-                    <div class="invalid-feedback">Please provide a valid price (use "." instead ",")</div>
+                    <input id="validationCustom05" class="form-control input__price" required/>
+                    <div class="invalid-feedback fail__price">Please provide a valid price (use "." instead ",")</div>
                 </div>
                 <div class="description">
                     <label for = "description" class="form-label">Description</label>
@@ -31,6 +31,7 @@ export function newResources() {
                 <div class="image">
                     <label for = "image" class="form-label">Image Url</label>
                     <textarea id="image" style="height: 50px" required class="form-control"></textarea>
+                    <div class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</div>
                 </div>
                 <div class="form-check container">
                     <input type="checkbox" value="featured" id="featuredProduct" class="form-check-input"/>
