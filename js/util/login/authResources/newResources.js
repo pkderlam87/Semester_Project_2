@@ -1,5 +1,4 @@
 import { addProduct } from "./addProduct.js";
-import { deleteProduct } from "./deleteProduct.js";
 
 export function newResources() {
     const productLink = document.querySelectorAll("#product");
@@ -22,7 +21,7 @@ export function newResources() {
                 <div class="price">
                     <label for = "price" class="form-label">Price (Nok)</label>
                     <input id="validationCustom05" class="form-control input__price" required/>
-                    <div class="invalid-feedback fail__price">Please provide a valid price (use "." instead ",")</div>
+                    <p class="invalid-feedback fail__price">Please provide a valid price (use "." instead ",")</p>
                 </div>
                 <div class="description">
                     <label for = "description" class="form-label">Description</label>
@@ -31,7 +30,7 @@ export function newResources() {
                 <div class="image">
                     <label for = "image" class="form-label">Image Url</label>
                     <textarea id="image" style="height: 50px" required class="form-control"></textarea>
-                    <div class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</div>
+                    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</p>
                 </div>
                 <div class="form-check container">
                     <input type="checkbox" value="featured" id="featuredProduct" class="form-check-input"/>
@@ -50,13 +49,3 @@ function disableLink(productLink) {
         productLink[i].classList.add("disabled");
     }
 }
-
-/*function changeButton(buttonCard) {
-    buttonCard.forEach(element => {
-        element.innerHTML = `<div class="container justify-content-between"><i class="ri-delete-bin-2-fill btn btn-delete"></i> <a href="/edit.html"><i class="ri-edit-line btn"></i></a></div>`;
-    });
-    const deleteButton = document.querySelectorAll(".btn-delete");
-    deleteButton.forEach(element => {
-        element.addEventListener("click", deleteProduct);
-    });
-}*/

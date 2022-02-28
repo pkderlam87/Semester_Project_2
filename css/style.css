@@ -12041,13 +12041,13 @@ footer i {
           box-shadow: 2px 2px 5px #E3E3E3;
 }
 
-.btn:hover, .btn:active, .btn:visited, .btn:focus {
+.btn:hover, .btn:active, .btn:focus {
   background-color: #69E1FC !important;
   color: #242424 !important;
   border: 3px solid #69E1FC;
 }
 
-.btn:hover i, .btn:active i, .btn:visited i, .btn:focus i {
+.btn:hover i, .btn:active i, .btn:focus i {
   color: #242424 !important;
 }
 
@@ -12149,6 +12149,8 @@ footer i {
   margin: 3% auto;
   width: 230px;
   height: 190px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 1px, solid, #D96704;
   -webkit-box-shadow: 3px 3px 6px #D96704;
           box-shadow: 3px 3px 6px #D96704;
@@ -12321,8 +12323,10 @@ footer i {
 }
 
 .product__purchased img {
-  max-width: 20%;
+  max-width: 50px;
   height: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 1px, solid, #D96704;
   -webkit-box-shadow: 3px 3px 6px #D96704;
           box-shadow: 3px 3px 6px #D96704;
@@ -12419,6 +12423,12 @@ footer i {
   height: 25px;
   background-color: #FFF;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='orange' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
+.form .invalid-feedback, #login__form .invalid-feedback, .auth__add__new__product .invalid-feedback, .edit__form .invalid-feedback {
+  color: #F7CC97;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .auth__add__new__product {

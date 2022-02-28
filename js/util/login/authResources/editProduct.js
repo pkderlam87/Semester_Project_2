@@ -45,7 +45,7 @@ function createEditFields(editionInfo) {
                         <div class="form-floating price">
                             <input type="price" class="form-control" id="floatingInput" required>
                             <label for="floatingInput">${editionInfo.price} Nok</label>
-                            <div class="invalid-feedback fail__price">Please provide a valid price (use "." instead ",")</div>
+                            <p class="invalid-feedback fail__price">Please provide a valid price (use "." instead ",")</p>
                         </div>
                     <h4 class="heading__description">Product's description</h4>
                     <div class="form-floating description">
@@ -75,13 +75,13 @@ export function showImage(place, editionInfo) {
     <img src="${baseUrl}${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
     <textarea class="form-control" id="floatingTextarea2" style="height: 150px" type="image" required></textarea>
     </div>
-    <div class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</div>`;
+    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</p>`;
     } else {
         place.innerHTML = `<div class="form-floating mb-auto image">
     <img src="${editionInfo.image_url}" alt = "${editionInfo.title}" class="edit__image">    
     <textarea class="form-control imageUrlToCheck" id="floatingTextarea2" style="height: 150px" type="image" required></textarea>
     </div>
-    <div class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</div>`;
+    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</p>`;
     }
 }
 function showBooleanFeatured(place, editionInfo) {

@@ -11,8 +11,9 @@
     @include border-radius (10px);
 
     img{
-        max-width: 20%;
+        max-width: 50px;
         height: 90px;
+        object-fit: cover;
         @include border(1px, custom-orange);
         @include box__shadow (3px, 6px, custom-orange);
     }

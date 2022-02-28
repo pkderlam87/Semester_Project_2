@@ -10,7 +10,6 @@
     
     &:hover,
     &:active,
-    &:visited,
     &:focus{
         background-color: getColour(custom-cyan) !important;
         color: darken(getColour(primary-colour), 10%) !important;
