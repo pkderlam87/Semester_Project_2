@@ -1,0 +1,24 @@
+.container--introduction{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    @media(min-width:$tablet-width){
+        display: flex;
+    }
+    .introduction{
+        color: getColour(secondary-colour);
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        h1{
+            margin: 2% auto 8% auto;
+        }
+        h3{
+            line-height: 200%;
+        }
+    }
+    video{
+        max-width: 90%;
+        margin: 2% auto;
+    }
+}

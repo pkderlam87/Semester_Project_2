@@ -52,7 +52,7 @@ function createEditFields(editionInfo) {
                             <textarea class="form-control" id="floatingTextarea2" style="height: 200px" type="description" required></textarea>
                             <label for="floatingTextarea2">${editionInfo.description.substring(0, 30)}[...]</label>
                     </div>
-                    <h4 class="heading__image">Product's image</h4>
+                    <h4 class="heading__image">Product image URL</h4>
                     <div id="editImagePlace"></div>
                     <div class = "featured">
                     <h4 class="heading__featured">Featured product</h4>

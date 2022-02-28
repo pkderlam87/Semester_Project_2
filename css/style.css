@@ -12683,4 +12683,47 @@ footer i {
     left: 100px;
   }
 }
+
+.container--introduction {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 768px) {
+  .container--introduction {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.container--introduction .introduction {
+  color: #FFF;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container--introduction .introduction h1, .container--introduction .introduction .h1 {
+  margin: 2% auto 8% auto;
+}
+
+.container--introduction .introduction h3, .container--introduction .introduction .h3 {
+  line-height: 200%;
+}
+
+.container--introduction video {
+  max-width: 90%;
+  margin: 2% auto;
+}
 /*# sourceMappingURL=style.css.map */
