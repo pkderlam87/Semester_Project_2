@@ -27,6 +27,9 @@
     }
 }
 .navbar-dark{
+    .navbar-toggler-icon{
+        background-image: $custom-hamburger;
+    }
     .navbar-toggler{
         border: none;
         color: getColour(custom-cyan) !important;
