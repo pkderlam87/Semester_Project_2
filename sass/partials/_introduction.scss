@@ -2,7 +2,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    @media(min-width:$tablet-width){
+    @media(min-width:$desktop-width){
         display: flex;
     }
     .introduction{
@@ -20,5 +20,8 @@
     video{
         max-width: 90%;
         margin: 2% auto;
+        @media(min-width:$desktop-width){
+            margin: 2%;
+        }   
     }
 }

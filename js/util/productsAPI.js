@@ -7,7 +7,7 @@ import { newResources } from "../util/login/authResources/newResources.js";
 import { getToken } from "../components/saveTokenAndUser.js";
 
 const productsUrl = baseUrl + "/products";
-loginMenu();
+//loginMenu();
 (async function products() {
     try {
         const response = await fetch(productsUrl);

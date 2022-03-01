@@ -6,7 +6,7 @@ const form = document.querySelector("#login__form");
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 
-loginMenu();
+//loginMenu();
 
 form.addEventListener("submit", submitForm);
 

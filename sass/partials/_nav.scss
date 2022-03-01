@@ -14,7 +14,7 @@
     display: none;
     @media (min-width:992px){
         display: inherit;
-        max-width: 65%;
+        max-width: 85%;
     }
 }
 .home{
@@ -24,9 +24,6 @@
     &:hover{
         color: getColour(secondary-colour);
         text-decoration: underline;
-    }
-    @media (min-width:992px){
-    display:none;
     }
 }
 .navbar-dark{

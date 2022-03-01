@@ -6,7 +6,7 @@ import { checkURL } from "./addProduct.js";
 
 const container = document.querySelector(".container");
 let form = "";
-loginMenu();
+//loginMenu();
 let id = "";
 (function editProduct() {
     const queryString = document.location.search;
@@ -31,7 +31,6 @@ let id = "";
     })();
 })();
 function createEditFields(editionInfo) {
-    console.log(editionInfo);
     container.innerHTML = "";
     container.innerHTML = `<form class="edit__form">
                     <div class="message-container"></div>

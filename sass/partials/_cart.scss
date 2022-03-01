@@ -38,3 +38,17 @@
         }
     }
 }
+.line{
+    border-top: 3px solid getColour(secondary-colour);
+    max-width: 90%;
+    margin: $center;
+    @include box__shadow (3px, 6px, secondary-colour);
+}
+.total{
+    color: getColour(secondary-colour);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 2%;
+    margin: 2%;
+}
