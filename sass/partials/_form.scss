@@ -36,12 +36,20 @@
 #login__form{
     @extend .form;
 }
-.auth__product{
+.auth__product,
+#edit{
     @extend .form;
     padding: 0;
         .form-label{
             margin: 2% auto;
         }
+        .edit__image{
+            width: 100px;
+            height: 100px;
+            margin: 1%;
+            object-fit: cover;
+            @include border-radius (5px);
+    }
     @media(min-width:$tablet-width){
         #formAdd{
             display: grid;
@@ -80,90 +88,4 @@
         }
     }
     
-}
-.edit__form{
-    @extend .form;
-    padding: 3%;
-    margin:auto;
-    label{
-        color: getColour(primary-colour);
-        margin: auto;
-        text-align: left;
-    }
-    .edit__image{
-        max-width: 25%;
-        margin: 1%;
-        object-fit: cover;
-        @include border-radius (5px);
-    }
-    .image,
-    .featured{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .featured{
-        gap: 2%;
-    }
-    .heading__featured{
-        margin:2% 0;
-    }
-    .form-floating > .form-control:not(:placeholder-shown) ~ label{
-        color: getColour(primary-colour);
-        opacity: 1;
-    }
-    @media (min-width:$desktop-width){
-        &{
-            display:grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2%;
-            h1{
-                grid-row:1;
-                grid-column-start: 1;
-                grid-column-end: span 2;
-                margin: 2% auto;
-            }
-            h4{
-                margin: 2% auto;
-            }
-            .heading__title{
-                grid-row:2;
-            }
-            .title{
-                grid-row: 3;
-            }
-            .title{
-                grid-column: 1;
-            }
-            .price,
-            .heading__price{
-                grid-column: 2;
-            }
-            .heading__price{
-                grid-row:2;
-            }
-            .price{
-                grid-row: 3;
-            }
-            .heading__description{
-                grid-row: 4;
-                grid-column: 2;
-            }
-            .description{
-                grid-column:2;
-                grid-row-start: 5;
-                grid-row-end: span 8;
-            }
-            .heading__image{
-                grid-row: 4;
-            }
-            .update{
-                grid-row: 8;
-                grid-column-start: 1;
-                grid-column-end:span 2 ;
-                margin: 0 30%;
-            }
-
-        }
-    }
 }
