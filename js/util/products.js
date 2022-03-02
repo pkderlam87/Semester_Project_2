@@ -1,6 +1,7 @@
 import { baseUrl } from "../components/api.js";
 import { getToken } from "../components/saveTokenAndUser.js";
 import { deleteProduct } from "./login/authResources/deleteProduct.js";
+import { editProduct } from "./login/authResources/editProduct.js";
 
 
 export function showProducts(json) {
@@ -32,8 +33,13 @@ export function showProducts(json) {
 }
 function changeButton(buttonCard, json) {
     for (let i = 0; i < buttonCard.length; i++) {
-        buttonCard[i].innerHTML = `<div class="container justify-content-between"><i class="ri-delete-bin-2-fill btn btn-delete" data-id=${json[i].id}></i> <a href="/edit.html?id=${json[i].id}"><i class="ri-edit-line btn"></i></a></div>`;
+        buttonCard[i].innerHTML = `<div class="container justify-content-between"><i class="ri-delete-bin-2-fill btn btn-delete" data-id=${json[i].id}></i> <a href="/edit.html?id=${json[i].id}"><i class="ri-edit-line btn" data-id=${json[i].id}></i></a></div>`;
     };
+    const editPage = document.querySelectorAll(".ri-edit-line");
+    editPage.forEach(element => {
+        element.addEventListener("click", editProduct);
+    })
+
     const deleteButton = document.querySelectorAll(".btn-delete");
     deleteButton.forEach(element => {
         element.addEventListener("click", deleteProduct);

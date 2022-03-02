@@ -1,13 +1,12 @@
 import { baseUrl } from "../components/api.js";
 import { showProducts } from "./products.js";
 import { searchProducts } from "./searchProducts.js";
-import { loginMenu } from "../common/loginMenu.js";
 import { displayMessage } from "../common/displayMessage.js";
 import { newResources } from "../util/login/authResources/newResources.js";
 import { getToken } from "../components/saveTokenAndUser.js";
 
 const productsUrl = baseUrl + "/products";
-//loginMenu();
+
 (async function products() {
     try {
         const response = await fetch(productsUrl);

@@ -1,5 +1,4 @@
 import { displayMessage } from "../../common/displayMessage.js";
-import { loginMenu } from "../../common/loginMenu.js";
 import { baseUrl } from "../../components/api.js";
 import { createDetails } from "./createDetails.js";
 
@@ -19,7 +18,6 @@ const productURL = baseUrl + "/products/" + id;
         const details = await response.json();
         document.title = `Smoof shoes | ${details.title}`;
         createDetails(details);
-        //loginMenu();
     } catch {
         console.log(error);
         displayMessage("error", error, ".message__place");
