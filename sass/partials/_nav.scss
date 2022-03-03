@@ -14,7 +14,7 @@
     display: none;
     @media (min-width:992px){
         display: inherit;
-        max-width: 65%;
+        max-width: 85%;
     }
 }
 .home{
@@ -25,11 +25,11 @@
         color: getColour(secondary-colour);
         text-decoration: underline;
     }
-    @media (min-width:992px){
-    display:none;
-    }
 }
 .navbar-dark{
+    .navbar-toggler-icon{
+        background-image: $custom-hamburger;
+    }
     .navbar-toggler{
         border: none;
         color: getColour(custom-cyan) !important;

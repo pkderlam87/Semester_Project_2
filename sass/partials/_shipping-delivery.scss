@@ -1,7 +1,21 @@
 .block__shipping-delivery{
     color: getColour(secondary-colour);
-    width: 87%;
+    width: 300px;
     margin: $center;
+    @media(min-width: $tablet-width){
+        &{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .delivery{
+            animation: none;
+            background: none;
+            position: relative;
+        }
+        .shipping{
+            animation: none;
+        }
+    }
     .shipping{
         animation: fadeOut 7s infinite;
     @keyframes fadeOut {
@@ -27,19 +41,5 @@
         90%{opacity: 0.5;}
         100%{opacity: 0;}
     }
-    }
-    @media(min-width: $tablet-width){
-        &{
-            display: flex;
-            justify-content: space-evenly;
-        }
-        .delivery{
-            animation: none;
-            background: none;
-            position: relative;
-        }
-        .shipping{
-            animation: none;
-        }
     }
 }

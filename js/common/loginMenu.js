@@ -1,9 +1,8 @@
 import { getUsername } from "../components/saveTokenAndUser.js";
 import { doLogout } from "./logoutMenu.js";
 
-export function loginMenu() {
+export function loginMenu(login) {
     const { pathname } = document.location;
-    const loginIcon = document.querySelector(".login__icon");
     const username = getUsername();
     let authLink = `<a href ="/login.html" class = "${pathname === "/login.html" ? "active" : ""}"><i class="far fa-user-circle"></i></a>`;
     if (username) {
@@ -12,7 +11,7 @@ export function loginMenu() {
         <i class="ri-user-shared-2-fill" id="logout" title="Logout"></i></div>`;
 
     }
-    loginIcon.innerHTML = `${authLink}`;
+    login.innerHTML = `${authLink}`;
     doLogout();
 }
 

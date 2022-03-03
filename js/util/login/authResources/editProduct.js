@@ -1,110 +1,68 @@
-import { loginMenu } from "../../../common/loginMenu.js";
 import { displayMessage } from "../../../common/displayMessage.js";
 import { baseUrl } from "../../../components/api.js";
 import { getToken } from "../../../components/saveTokenAndUser.js";
 import { checkURL } from "./addProduct.js";
+import { showForm } from "./newResources.js";
 
-const container = document.querySelector(".container");
+
 let form = "";
-loginMenu();
-let id = "";
-(function editProduct() {
-    const queryString = document.location.search;
-    const params = new URLSearchParams(queryString);
-    id = params.get("id");
-
-    if (!id) {
-        document.location.href = "/products.html";
-    }
+let id = 0;
+const editNewResource = document.querySelector("#edit");
+export async function editProduct() {
+    id = this.dataset.id;
     const productURL = baseUrl + "/products/" + id;
-    (async function edit() {
-        try {
-            const response = await fetch(productURL);
-            const edition = await response.json();
-            document.title = `Smoof shoes | Edit ${edition.title}`;
-            createEditFields(edition);
-
-        } catch {
-            console.log(error);
-            displayMessage("error", error, ".message__place");
-        }
-    })();
-})();
-function createEditFields(editionInfo) {
-    console.log(editionInfo);
-    container.innerHTML = "";
-    container.innerHTML = `<form class="edit__form">
-                    <div class="message-container"></div>
-                    <h1>Here you can edit the ${editionInfo.title}</h1>
-                        <h4 class="heading__title">Product's title</h4>
-                        <div class="form-floating title">
-                            <input type="title" class="form-control" id="floatingInput" required>
-                            <label for="floatingInput">${editionInfo.title}</label>
-                        </div>
-                        <h4 class="heading__price">Product's price</h4>
-                        <div class="form-floating price">
-                            <input type="price" class="form-control" id="floatingInput" required>
-                            <label for="floatingInput">${editionInfo.price} Nok</label>
-                            <p class="invalid-feedback fail__price">Please provide a valid price (use "." instead ",")</p>
-                        </div>
-                    <h4 class="heading__description">Product's description</h4>
-                    <div class="form-floating description">
-                            <textarea class="form-control" id="floatingTextarea2" style="height: 200px" type="description" required></textarea>
-                            <label for="floatingTextarea2">${editionInfo.description.substring(0, 30)}[...]</label>
-                    </div>
-                    <h4 class="heading__image">Product's image</h4>
-                    <div id="editImagePlace"></div>
-                    <div class = "featured">
-                    <h4 class="heading__featured">Featured product</h4>
-                    <div class="featured__place"></div>
-                    </div>
-                    <button class="btn btn-primary update" type="submit" id="update">Save <i class="ri-edit-line"></i></button>
-            </div>
-            </form>`;
-    const editImagePlace = document.querySelector("#editImagePlace");
-    showImage(editImagePlace, editionInfo);
-    const featuredPlace = document.querySelector(".featured__place");
-    showBooleanFeatured(featuredPlace, editionInfo);
-    form = document.querySelector(".edit__form");
-    form.addEventListener("submit", submitForm);
+    try {
+        const response = await fetch(productURL);
+        const edition = await response.json();
+        document.title = `Smoof shoes | Edit ${edition.title}`;
+        showForm(edition, editNewResource);
+    } catch (error) {
+        console.log(error);
+        displayMessage("error", error, ".message__place");
+    }
 }
 
 export function showImage(place, editionInfo) {
     if (editionInfo.image_url === null || editionInfo.image_url.length === 0) {
-        place.innerHTML = `<div class="form-floating mb-auto image">
-    <img src="${baseUrl}${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
-    <textarea class="form-control" id="floatingTextarea2" style="height: 150px" type="image" required></textarea>
-    </div>
-    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</p>`;
+        place.innerHTML = `<img src="${baseUrl}${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
+    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: https://static.nike.com/a/images/air-max.jpg)</p>`;
     } else {
-        place.innerHTML = `<div class="form-floating mb-auto image">
+        place.innerHTML = `
     <img src="${editionInfo.image_url}" alt = "${editionInfo.title}" class="edit__image">    
-    <textarea class="form-control imageUrlToCheck" id="floatingTextarea2" style="height: 150px" type="image" required></textarea>
-    </div>
-    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</p>`;
+    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: https://static.nike.com/a/images/air-max.jpg)</p>`;
     }
 }
-function showBooleanFeatured(place, editionInfo) {
+export function showBooleanFeatured(place, editionInfo) {
     if (editionInfo.featured === false) {
         place.innerHTML = `<input type="checkbox" value="featured" id="featuredProduct" class="form-check-input"/>`
     } else {
         place.innerHTML = `<input type="checkbox" id="featuredProduct" checked class="form-check-input"/>`
     }
 }
+
+export function updateProduct() {
+    form = document.querySelector("#formAdd");
+    form.addEventListener("submit", submitForm);
+}
 function submitForm(event) {
+    console.log(event);
     event.preventDefault();
     const titleValue = event.target[0].value.trim();
     const priceValue = parseFloat(event.target[1].value);
     const descriptionValue = event.target[2].value.trim();
     const invalidFeedbackPrice = document.querySelector(".fail__price");
     const invalidFeedbackUrl = document.querySelector(".fail__url");
+    const formTitle = document.querySelector(".form__title");
     let imageValue = "";
     checkURL(event.target[3].value.trim());
     if (checkURL(event.target[3].value.trim())) {
         imageValue = event.target[3].value.trim();
         invalidFeedbackUrl.style.display = "none";
-    } else {
+    } if (!checkURL(event.target[3].value.trim())) {
         invalidFeedbackUrl.style.display = "block";
+    } if (event.target[3].value === "The source of this image is not an URL, but you are free to add one.") {
+        invalidFeedbackUrl.style.display = "none";
+        imageValue = baseUrl + event.image.formats.small.url;
     }
     const featuredValue = event.target[4].checked;
     if (isNaN(priceValue)) {
@@ -113,10 +71,10 @@ function submitForm(event) {
         invalidFeedbackPrice.style.display = "none";
     };
     if (priceValue && imageValue.length > 0) {
-        saveProductAPI(titleValue, priceValue, descriptionValue, imageValue, featuredValue, form);
+        saveProductAPI(titleValue, priceValue, descriptionValue, imageValue, featuredValue, form, formTitle);
     }
 }
-async function saveProductAPI(title, price, description, image, featured, form) {
+async function saveProductAPI(title, price, description, image, featured, form, formTitle) {
     const url = baseUrl + "/products/" + id;
     const data = JSON.stringify({
         title: title,
@@ -139,15 +97,19 @@ async function saveProductAPI(title, price, description, image, featured, form) 
         const json = await response.json();
         console.log(json);
         if (json.updated_at) {
-            displayMessage("results", "Product updated", ".message__place");
+            displayMessage("results", "Product updated", ".message__form");
             form.style.display = "none";
+            formTitle.style.display = "none";
+            setTimeout(function () {
+                location.href = "/products.html";
+            }, 2000);
         }
         if (json.error) {
-            displayMessage("noResults", json.message, ".message__place");
+            displayMessage("noResults", json.message, ".message__form");
         }
     } catch (error) {
         console.log(error);
-        displayMessage("error", error, ".message__place");
+        displayMessage("error", error, ".message__form");
     }
 }
 
