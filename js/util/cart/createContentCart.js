@@ -5,7 +5,7 @@ export function createContentCart(target, purchaseProduct) {
     purchaseContainer.innerHTML += `<div class="product__purchased">
     <img src="${purchaseProduct.image}" alt="${purchaseProduct.alt}">
     <h5>${purchaseProduct.title}</h5>
-    <h6>${purchaseProduct.price} Nok</h6>
+    <h6>${purchaseProduct.price} NOK</h6>
     <a href="/product_detail.html?id=${purchaseProduct.id}" class = "link">View Product</a>
     </div>`;
     total += parseFloat(purchaseProduct.price);
@@ -23,5 +23,5 @@ function disabledLink(link) {
 }
 function showTotal(total) {
     const totalContainer = document.querySelector(".total");
-    totalContainer.innerHTML = `<h1>Total:</h1> <h2>${total} Nok</h2>`;
+    totalContainer.innerHTML = `<h1>Total:</h1> <h2>${total} NOK</h2>`;
 }
