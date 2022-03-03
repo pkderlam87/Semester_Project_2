@@ -7,7 +7,7 @@ import { showForm } from "./newResources.js";
 
 let form = "";
 let id = 0;
-const newResourceProductContainer = document.querySelector("#edit");
+const editNewResource = document.querySelector("#edit");
 export async function editProduct() {
     id = this.dataset.id;
     const productURL = baseUrl + "/products/" + id;
@@ -15,7 +15,7 @@ export async function editProduct() {
         const response = await fetch(productURL);
         const edition = await response.json();
         document.title = `Smoof shoes | Edit ${edition.title}`;
-        showForm(edition, newResourceProductContainer);
+        showForm(edition, editNewResource);
     } catch (error) {
         console.log(error);
         displayMessage("error", error, ".message__place");
@@ -25,11 +25,11 @@ export async function editProduct() {
 export function showImage(place, editionInfo) {
     if (editionInfo.image_url === null || editionInfo.image_url.length === 0) {
         place.innerHTML = `<img src="${baseUrl}${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
-    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</p>`;
+    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: https://static.nike.com/a/images/air-max.jpg)</p>`;
     } else {
         place.innerHTML = `
     <img src="${editionInfo.image_url}" alt = "${editionInfo.title}" class="edit__image">    
-    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</p>`;
+    <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: https://static.nike.com/a/images/air-max.jpg)</p>`;
     }
 }
 export function showBooleanFeatured(place, editionInfo) {
@@ -45,6 +45,7 @@ export function updateProduct() {
     form.addEventListener("submit", submitForm);
 }
 function submitForm(event) {
+    console.log(event);
     event.preventDefault();
     const titleValue = event.target[0].value.trim();
     const priceValue = parseFloat(event.target[1].value);
@@ -57,8 +58,11 @@ function submitForm(event) {
     if (checkURL(event.target[3].value.trim())) {
         imageValue = event.target[3].value.trim();
         invalidFeedbackUrl.style.display = "none";
-    } else {
+    } if (!checkURL(event.target[3].value.trim())) {
         invalidFeedbackUrl.style.display = "block";
+    } if (event.target[3].value === "The source of this image is not an URL, but you are free to add one.") {
+        invalidFeedbackUrl.style.display = "none";
+        imageValue = baseUrl + event.image.formats.small.url;
     }
     const featuredValue = event.target[4].checked;
     if (isNaN(priceValue)) {

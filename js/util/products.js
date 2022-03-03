@@ -15,7 +15,7 @@ export function showProducts(json) {
             <div class="image__place"></div>
             <div class="card-body">
                 <h5 class="card-title">${json[i].title}</h5>
-                <h5 class="card-text">${json[i].price} Nok</h5>
+                <h5 class="card-text">${json[i].price} NOK</h5>
                 <div class = "button__card">
                 <a href="/product_detail.html?id=${json[i].id}" class="btn btn-primary">View product</a>
                 </div>
@@ -34,7 +34,7 @@ export function showProducts(json) {
 }
 function changeButton(buttonCard, json) {
     for (let i = 0; i < buttonCard.length; i++) {
-        buttonCard[i].innerHTML = `<div class="container justify-content-between"><i class="ri-delete-bin-2-fill btn btn-delete" data-id=${json[i].id}></i> <i class="ri-edit-line btn" data-id=${json[i].id}></i></div>`;
+        buttonCard[i].innerHTML = `<div class="container justify-content-between"><i class="ri-delete-bin-2-fill btn btn-delete" data-id=${json[i].id}></i> <a href = "#edit"><i class="ri-edit-line btn" data-id=${json[i].id}></i></a></div>`;
     };
     const editPage = document.querySelectorAll(".ri-edit-line");
     editPage.forEach(element => {

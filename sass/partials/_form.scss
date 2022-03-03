@@ -15,17 +15,25 @@
             padding: auto;
             @include border-radius (5px);
         }
-        #featuredProduct{
-            width: 20px;
-            height: 20px;
-            margin-left: 1%;
-            &:checked{
-                width: 25px;
-            height: 25px;
-                background-color: getColour(secondary-colour);
-                background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='orange' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+        .form-check{
+            align-items: center;
+            justify-content: center;
+            #featuredProduct{
+                width: 20px;
+                height: 20px;
+                margin-left: 1%;
+                &:checked{
+                    width: 25px;
+                height: 25px;
+                    background-color: getColour(secondary-colour);
+                    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='orange' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+                }
+            }
+            .form-check-label{
+                margin: 6%;
             }
         }
+        
         .invalid-feedback{
             color: getColour(light-yellow);
             font-size: 0.9rem;
@@ -36,8 +44,7 @@
 #login__form{
     @extend .form;
 }
-.auth__product,
-#edit{
+.auth__product{
     @extend .form;
     padding: 0;
         .form-label{
@@ -82,10 +89,18 @@
             grid-column-start: 1;
             grid-column-end: span 2;
         }
-        .btn-primary--add{
+        .button{
             grid-column-start: 1;
             grid-column-end: span 2;
         }
+    }   
+}
+#edit{
+    @extend .auth__product;
+    @media(min-width:$tablet-width){
+    margin-top: 12%;
     }
-    
+    .button{
+        display: grid;
+    }
 }

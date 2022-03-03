@@ -12138,6 +12138,11 @@ footer i {
   border: 3px solid #F7CC97;
 }
 
+.edit__buttons {
+  max-width: 60%;
+  margin: 2% auto;
+}
+
 .products {
   margin: 2% auto;
 }
@@ -12411,8 +12416,7 @@ footer i {
   color: #FFF;
 }
 
-.form, #login__form, .auth__product,
-#edit {
+.form, #login__form, .auth__product, #edit {
   text-align: center;
   padding: 6%;
   margin: 0 auto;
@@ -12441,17 +12445,30 @@ footer i {
   border-radius: 5px;
 }
 
-.form #featuredProduct, #login__form #featuredProduct, .auth__product #featuredProduct, #edit #featuredProduct {
+.form .form-check, #login__form .form-check, .auth__product .form-check, #edit .form-check {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form .form-check #featuredProduct, #login__form .form-check #featuredProduct, .auth__product .form-check #featuredProduct, #edit .form-check #featuredProduct {
   width: 20px;
   height: 20px;
   margin-left: 1%;
 }
 
-.form #featuredProduct:checked, #login__form #featuredProduct:checked, .auth__product #featuredProduct:checked, #edit #featuredProduct:checked {
+.form .form-check #featuredProduct:checked, #login__form .form-check #featuredProduct:checked, .auth__product .form-check #featuredProduct:checked, #edit .form-check #featuredProduct:checked {
   width: 25px;
   height: 25px;
   background-color: #FFF;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='orange' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
+.form .form-check .form-check-label, #login__form .form-check .form-check-label, .auth__product .form-check .form-check-label, #edit .form-check .form-check-label {
+  margin: 6%;
 }
 
 .form .invalid-feedback, #login__form .invalid-feedback, .auth__product .invalid-feedback, #edit .invalid-feedback {
@@ -12460,18 +12477,15 @@ footer i {
   font-weight: 600;
 }
 
-.auth__product,
-#edit {
+.auth__product, #edit {
   padding: 0;
 }
 
-.auth__product .form-label,
-#edit .form-label {
+.auth__product .form-label, #edit .form-label {
   margin: 2% auto;
 }
 
-.auth__product .edit__image,
-#edit .edit__image {
+.auth__product .edit__image, #edit .edit__image {
   width: 100px;
   height: 100px;
   margin: 1%;
@@ -12481,8 +12495,7 @@ footer i {
 }
 
 @media (min-width: 768px) {
-  .auth__product #formAdd,
-  #edit #formAdd {
+  .auth__product #formAdd, #edit #formAdd {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -12490,18 +12503,14 @@ footer i {
     gap: 2%;
     margin: 1%;
   }
-  .auth__product h1, .auth__product .h1,
-  #edit h1,
-  #edit .h1 {
+  .auth__product h1, #edit h1, .auth__product .h1, #edit .h1 {
     margin: 1%;
   }
-  .auth__product .price,
-  #edit .price {
+  .auth__product .price, #edit .price {
     -ms-grid-column: 1;
     grid-column: 1;
   }
-  .auth__product .description,
-  #edit .description {
+  .auth__product .description, #edit .description {
     -ms-grid-row: 1;
         grid-row-start: 1;
     -ms-grid-row-span: 3;
@@ -12509,8 +12518,7 @@ footer i {
     -ms-grid-column: 2;
     grid-column: 2;
   }
-  .auth__product .form-check,
-  #edit .form-check {
+  .auth__product .form-check, #edit .form-check {
     -ms-grid-row: 3;
     grid-row: 3;
     gap: 2%;
@@ -12521,12 +12529,10 @@ footer i {
         -ms-flex-align: center;
             align-items: center;
   }
-  .auth__product .form-check .form-check-label,
-  #edit .form-check .form-check-label {
+  .auth__product .form-check .form-check-label, #edit .form-check .form-check-label {
     margin: 0;
   }
-  .auth__product .image,
-  #edit .image {
+  .auth__product .image, #edit .image {
     -ms-grid-row: 4;
     grid-row: 4;
     -ms-grid-column: 1;
@@ -12534,13 +12540,23 @@ footer i {
     -ms-grid-column-span: 2;
         grid-column-end: span 2;
   }
-  .auth__product .btn-primary--add,
-  #edit .btn-primary--add {
+  .auth__product .button, #edit .button {
     -ms-grid-column: 1;
         grid-column-start: 1;
     -ms-grid-column-span: 2;
         grid-column-end: span 2;
   }
+}
+
+@media (min-width: 768px) {
+  #edit {
+    margin-top: 12%;
+  }
+}
+
+#edit .button {
+  display: -ms-grid;
+  display: grid;
 }
 
 .loading .sneaker {

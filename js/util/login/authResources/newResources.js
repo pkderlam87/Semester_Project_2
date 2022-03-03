@@ -2,40 +2,45 @@ import { addProduct } from "./addProduct.js";
 import { showImage } from "./editProduct.js";
 import { showBooleanFeatured } from "./editProduct.js";
 import { updateProduct } from "./editProduct.js";
-
+import { baseUrl } from "../../../components/api.js";
+const newResourceProductContainer = document.querySelector(".auth__product");
+const editPlace = document.querySelector("#edit");
 export function newResources() {
     const emptyObject = {};
     const productLink = document.querySelectorAll("#product");
     disableLink(productLink);
-    const newResourceProductContainer = document.querySelector(".auth__product");
     newResourceProductContainer.innerHTML = `<div class="btn btn-primary--add">New product <i class="ri-add-circle-line"></i></div>`;
+    const productsPlace = document.querySelector(".products");
     const addButton = document.querySelector(".btn-primary--add");
-    addButton.addEventListener("click", showForm.bind(Event, emptyObject, newResourceProductContainer));
+    addButton.addEventListener("click", showForm.bind(Event, emptyObject, newResourceProductContainer, productsPlace));
 }
-export function showForm(event, target) {
-    console.log(target);
+export function showForm(event, target, productsPlace) {
+    if (target === newResourceProductContainer) {
+        productsPlace.style.display = "none";
+        editPlace.style.display = "none";
+    }
     target.innerHTML = `<h1 class="form__title"></h1>
     <div class = "message__form"></div>
             <div class="container justify-content-center">
                 <form id="formAdd">
                     <div class="title">
-                        <label for =  "title" class="form-label">Product's title</label>
+                        <label for =  "title" class="form-label">Product's title*</label>
                         <input id="title" type= "text" class="form-control" required/>
                     </div>
                     <div class="price">
-                        <label for = "price" class="form-label">Price (Nok)</label>
+                        <label for = "price" class="form-label">Price (NOK)*</label>
                         <input id="validationCustom05" class="form-control input__price" required/>
                         <p class="invalid-feedback fail__price">Please provide a valid price (use "." instead ",")</p>
                     </div>
                     <div class="description">
-                        <label for = "description" class="form-label">Description</label>
+                        <label for = "description" class="form-label">Description*</label>
                         <textarea id="description" style="height: 150px" required class="form-control"></textarea>
                     </div>
                     <div class="image">
-                        <label for = "image" class="form-label">Image Url</label>
+                        <label for = "image" class="form-label">Image Url*</label>
                         <div id="editImagePlace"></div>
                         <textarea id="image" style="height: 50px" required class="form-control"></textarea>
-                        <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: www.smoofshoes.com)</p>
+                        <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: https://static.nike.com/a/images/air-max.jpg)</p>
                     </div>
                     <div class="form-check container">
                     </div>
@@ -49,8 +54,6 @@ export function showForm(event, target) {
         const editImagePlace = document.querySelector("#editImagePlace");
         showImage(editImagePlace, event);
         updateProduct();
-        //form = document.querySelector("form");
-        //form.addEventListener("submit", submitForm);
     }
     const formTitle = document.querySelector(".form__title");
     titleNewResource(event, formTitle);
@@ -98,7 +101,11 @@ function textareaDescriptionNewResource(event, textareaDescription) {
 }
 function textareaImageNewResource(event, textareaImage) {
     if (JSON.stringify(event) !== "{}") {
-        textareaImage.value = `${event.image_url}`;
+        if (event.image_url === null || event.image_url.length === 0) {
+            textareaImage.value = `${baseUrl}${event.image.formats.small.url}`;
+        } else {
+            textareaImage.value = `${event.image_url}`;
+        }
     }
 }
 function formCheckNewResource(event, formCheck) {
@@ -113,8 +120,13 @@ function formCheckNewResource(event, formCheck) {
 }
 function buttonNewResource(event, button) {
     if (JSON.stringify(event) === "{}") {
-        button.innerHTML = `<button class="btn btn-primary--add" type="submit">Add <i class="ri-add-circle-line"></i></button>`;
+        button.innerHTML = `<button class="btn btn-primary--add" type="submit">Add <i class="ri-add-circle-line"></i></button> <a href = "/products.html" class= "btn btn-primary"> << Back</a>`;
     } if (JSON.stringify(event) !== "{}") {
-        button.innerHTML = `<button class="btn btn-primary update" type="submit" id="update">Save <i class="ri-edit-line"></i></button>`;
+        button.innerHTML = `<button class="btn btn-primary update edit__buttons" type="submit" id="update">Save <i class="ri-edit-line"></i></button> <div class ="btn btn-primary btn-delete edit__buttons cancel">Cancel <i class="ri-close-circle-line"></i></div> `;
+        const cancelButton = document.querySelector(".cancel");
+        cancelButton.addEventListener("click", hideForm);
     }
+}
+function hideForm() {
+    document.location.reload();
 }
