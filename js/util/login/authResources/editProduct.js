@@ -101,7 +101,7 @@ async function saveProductAPI(title, price, description, image, featured, form, 
             form.style.display = "none";
             formTitle.style.display = "none";
             setTimeout(function () {
-                location.href = "/products.html";
+                document.location.reload()
             }, 2000);
         }
         if (json.error) {

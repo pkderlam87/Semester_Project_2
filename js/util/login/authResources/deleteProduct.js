@@ -18,7 +18,7 @@ export async function deleteProduct(event) {
         try {
             const response = await fetch(url, options);
             const json = await response.json();
-            location.href = "/products.html";
+            document.location.reload();
         } catch (error) {
             console.log(error);
             displayMessage("error", "This item can't delete", ".message__place");
