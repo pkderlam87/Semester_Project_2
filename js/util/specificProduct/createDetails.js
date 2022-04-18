@@ -39,8 +39,8 @@ function createContentDetails(cssClass, item) {
 }
 function showImageDetails(place, item, shoppingButton, cssClass) {
     if (item.image_url === null || item.image_url.length === 0) {
-        place.innerHTML = `<img src="${baseUrl}${item.image.formats.small.url}" alt = "${item.image.alternativeText}" class="image__file__details">`;
-        shoppingButton.innerHTML = `<i class="${cssClass} btn btn-primary--cart" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}" data-image="${baseUrl}${item.image.formats.small.url}"
+        place.innerHTML = `<img src="${item.image.formats.small.url}" alt = "${item.image.alternativeText}" class="image__file__details">`;
+        shoppingButton.innerHTML = `<i class="${cssClass} btn btn-primary--cart" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}" data-image="${item.image.formats.small.url}"
         data-alt="${item.image.alternativeText}"></i>`;
     } else {
         place.innerHTML = `<img src="${item.image_url}" alt = "${item.title}" class="image__url__details">`;

@@ -43,7 +43,7 @@ function changeButton(buttonCard, json) {
 function showImageCard(imagePlace, json) {
     for (let i = 0; i < imagePlace.length; i++) {
         if (json[i].image_url === null || json[i].image_url.length === 0) {
-            imagePlace[i].innerHTML += `<img src="${baseUrl}${json[i].image.formats.small.url}" class="card-img-top" alt="${json[i].image.alternativeText}"></img>`
+            imagePlace[i].innerHTML += `<img src="${json[i].image.formats.small.url}" class="card-img-top" alt="${json[i].image.alternativeText}"></img>`
         } else {
             imagePlace[i].innerHTML += `<img src="${json[i].image_url}" class="card-img-top" alt="${json[i].title}">`;
         }
