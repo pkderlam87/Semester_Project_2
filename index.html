@@ -22,34 +22,6 @@
                 <p class="delivery">DELIVERY WITHIN 1-2 WORKING DAYS</p>
             </div>
             <div class="wrap_nav_favorite_cart_login">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
-                                            class="logo"></a>
-                                    <a href="/index.html" class="nav-link home">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="/products.html">Products</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <div class="favorite_cart_login">
-                    <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
-                            class="favorite_cart_login--logo"></a>
-                    <a href="/"><i class="far fa-heart"></i></a>
-                    <a href="/cart.html" id="cart"><i class="ri-shopping-cart-2-line" title="Cart is empty"></i></a>
-                    <div class="login__icon"></div>
-                </div>
             </div>
             <div class="banner">
                 <div class="banner--slogan">
@@ -60,12 +32,24 @@
             </div>
         </header>
         <main>
+            <div class="container--introduction">
+                <div class="introduction">
+                    <h1>Our Products</h1>
+                    <h3>We have selected sneakers to make your life easier and active.</h3>
+                </div>
+
+                <video width="auto" controls>
+                    <source src="/images/Movie.mp4" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+            </div>
             <h1 class="featured-title">Bestsellers</h1>
             <div class="products">
                 <div class="loading">
                     <img src="/images/sneaker.png" alt="loading icon" class="sneaker">
                 </div>
             </div>
+            <div id="edit"></div>
         </main>
     </div>
     <footer>
@@ -82,6 +66,7 @@
             </div>
         </div>
     </footer>
+    <script src="/js/common/menu.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

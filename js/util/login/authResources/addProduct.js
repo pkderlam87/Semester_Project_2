@@ -9,7 +9,6 @@ export function addProduct() {
     const price = document.querySelector(".input__price");
     const description = document.querySelector("#description");
     const image = document.querySelector("#image");
-    const featuredProduct = document.querySelector("#featuredProduct");
     const invalidFeedbackPrice = document.querySelector(".fail__price");
     const invalidFeedbackUrl = document.querySelector(".fail__url");
     form.addEventListener("submit", submitForm);
@@ -17,7 +16,7 @@ export function addProduct() {
         event.preventDefault();
         const titleValue = title.value.trim();
         const priceValue = parseFloat(price.value);
-        console.log(price.value);
+        const featuredProduct = event.target[4].checked;
         const descriptionValue = description.value.trim();
         let imageValue = "";
         checkURL(image.value.trim());
@@ -33,9 +32,8 @@ export function addProduct() {
             invalidFeedbackPrice.style.display = "none";
         };
         if (imageValue.length > 0 && priceValue) {
-            addProductAPI(titleValue, priceValue, descriptionValue, imageValue, featuredProduct.checked, form);
+            addProductAPI(titleValue, priceValue, descriptionValue, imageValue, featuredProduct, form);
         }
-
     }
 }
 

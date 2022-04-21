@@ -1,5 +1,4 @@
 import { baseUrl } from "../components/api.js";
-import { loginMenu } from "./loginMenu.js";
 
 const banner = document.querySelector(".banner");
 
@@ -10,8 +9,7 @@ const homeUrl = baseUrl + "/home";
     try {
         const response = await fetch(homeUrl);
         const json = await response.json();
-        banner.style.backgroundImage = `url("${json.hero_banner.formats.medium.url}")`;
-        loginMenu();
+        banner.style.backgroundImage = `url("${baseUrl}${json.hero_banner.formats.medium.url}")`;
     } catch (error) {
         console.log(error);
     }

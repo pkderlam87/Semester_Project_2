@@ -42,24 +42,24 @@
 .banner--products{
     background-image: url('/images/mikel-parera-lEvE5asVsKs-unsplash.jpg');
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     filter: sepia(60%);
     @media (min-width:$tablet-width){
-        height: 260px;
+        height: 130px;
     }
 }
 .banner__cart{
-    background-image: url("/images/benjamin-huggett-dFU9yCyAtyU-unsplash\ copy.jpg");
+    background-image: url("/images/jogging-gee6f05fda_1280.jpg");
     width: 100%;
-    height: 100px;
-    background-position: 25% 73%;
+    height: 70px;
+    background-position: 25% 84%;
     background-repeat: no-repeat;
     background-size: cover;
     @media (min-width:$tablet-width){
-        height: 260px;
+        height: 150px;
     }
     
 }

@@ -15,17 +15,25 @@
             padding: auto;
             @include border-radius (5px);
         }
-        #featuredProduct{
-            width: 20px;
-            height: 20px;
-            margin-left: 1%;
-            &:checked{
-                width: 25px;
-            height: 25px;
-                background-color: getColour(secondary-colour);
-                background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='orange' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+        .form-check{
+            align-items: center;
+            justify-content: center;
+            #featuredProduct{
+                width: 20px;
+                height: 20px;
+                margin-left: 1%;
+                &:checked{
+                    width: 25px;
+                height: 25px;
+                    background-color: getColour(secondary-colour);
+                    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='orange' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+                }
+            }
+            .form-check-label{
+                margin: 6%;
             }
         }
+        
         .invalid-feedback{
             color: getColour(light-yellow);
             font-size: 0.9rem;
@@ -36,12 +44,19 @@
 #login__form{
     @extend .form;
 }
-.auth__add__new__product{
+.auth__product{
     @extend .form;
     padding: 0;
         .form-label{
             margin: 2% auto;
         }
+        .edit__image{
+            width: 100px;
+            height: 100px;
+            margin: 1%;
+            object-fit: cover;
+            @include border-radius (5px);
+    }
     @media(min-width:$tablet-width){
         #formAdd{
             display: grid;
@@ -74,91 +89,18 @@
             grid-column-start: 1;
             grid-column-end: span 2;
         }
-        .btn-primary--add{
+        .button{
             grid-column-start: 1;
             grid-column-end: span 2;
         }
-    }
-    
+    }   
 }
-.edit__form{
-    @extend .form;
-    padding: 3%;
-    margin:auto;
-    label{
-        color: getColour(primary-colour);
-        margin: auto;
-        text-align: left;
+#edit{
+    @extend .auth__product;
+    @media(min-width:$tablet-width){
+    margin-top: 12%;
     }
-    .edit__image{
-        max-width: 19%;
-        margin: 1%;
-        @include border-radius (5px);
-    }
-    .image,
-    .featured{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .featured{
-        gap: 2%;
-    }
-    .heading__featured{
-        margin:2% 0;
-    }
-    @media (min-width:$desktop-width){
-        &{
-            display:grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2%;
-            h1{
-                grid-row:1;
-                grid-column-start: 1;
-                grid-column-end: span 2;
-                margin: 2% auto;
-            }
-            h4{
-                margin: 2% auto;
-            }
-            .heading__title{
-                grid-row:2;
-            }
-            .title{
-                grid-row: 3;
-            }
-            .title{
-                grid-column: 1;
-            }
-            .price,
-            .heading__price{
-                grid-column: 2;
-            }
-            .heading__price{
-                grid-row:2;
-            }
-            .price{
-                grid-row: 3;
-            }
-            .heading__description{
-                grid-row: 4;
-                grid-column: 2;
-            }
-            .description{
-                grid-column:2;
-                grid-row-start: 5;
-                grid-row-end: span 8;
-            }
-            .heading__image{
-                grid-row: 4;
-            }
-            .update{
-                grid-row: 8;
-                grid-column-start: 1;
-                grid-column-end:span 2 ;
-                margin: 0 30%;
-            }
-
-        }
+    .button{
+        display: grid;
     }
 }
