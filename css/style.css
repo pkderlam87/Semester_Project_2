@@ -12333,7 +12333,7 @@ footer i {
 }
 
 .product__purchased img {
-  max-width: 50px;
+  max-width: 90px;
   height: 90px;
   -o-object-fit: cover;
      object-fit: cover;

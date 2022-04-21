@@ -1,4 +1,4 @@
-.product__purchased{
+.product__purchased {
     display: flex;
     width: 90%;
     justify-content: space-evenly;
@@ -6,45 +6,51 @@
     background-color: getColour(secondary-colour-transparent);
     margin: 3% auto;
     padding: 2%;
-    gap:7%;
+    gap: 7%;
     text-align: center;
     @include border-radius (10px);
 
-    img{
-        max-width: 50px;
+    img {
+        max-width: 90px;
         height: 90px;
         object-fit: cover;
         @include border(1px, custom-orange);
         @include box__shadow (3px, 6px, custom-orange);
     }
 
-    h5{
+    h5 {
         font-size: 1rem;
+
         @media (min-width:$tablet-width) {
             font-size: 1.5rem;
         }
     }
-    h6{
+
+    h6 {
         @media (min-width:$tablet-width) {
             font-size: 1.3rem;
         }
     }
-    .link{
+
+    .link {
         font-weight: 600;
         font-style: italic;
         color: darken(getColour(custom-cyan), 50%);
+
         @media (min-width:$tablet-width) {
             font-size: 1.3rem;
         }
     }
 }
-.line{
+
+.line {
     border-top: 3px solid getColour(secondary-colour);
     max-width: 90%;
     margin: $center;
     @include box__shadow (3px, 6px, secondary-colour);
 }
-.total{
+
+.total {
     color: getColour(secondary-colour);
     display: flex;
     justify-content: right;
