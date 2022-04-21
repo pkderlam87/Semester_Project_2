@@ -24,7 +24,7 @@ export async function editProduct() {
 
 export function showImage(place, editionInfo) {
     if (editionInfo.image_url === null || editionInfo.image_url.length === 0) {
-        place.innerHTML = `<img src="${baseUrl}${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
+        place.innerHTML = `<img src="${editionInfo.image.formats.small.url}" alt = "${editionInfo.image.alternativeText}" class="edit__image">    
     <p class="invalid-feedback fail__url">Please provide a valid url (e.g.: https://static.nike.com/a/images/air-max.jpg)</p>`;
     } else {
         place.innerHTML = `

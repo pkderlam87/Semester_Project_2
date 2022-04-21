@@ -5,6 +5,7 @@ import { baseUrl } from "../../components/api.js";
 
 export async function doLogin(username, password) {
     const url = baseUrl + "/auth/local";
+    console.log(url);
     const data = JSON.stringify({ identifier: username, password: password });
     const options = {
         method: "POST",

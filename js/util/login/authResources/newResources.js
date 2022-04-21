@@ -102,7 +102,7 @@ function textareaDescriptionNewResource(event, textareaDescription) {
 function textareaImageNewResource(event, textareaImage) {
     if (JSON.stringify(event) !== "{}") {
         if (event.image_url === null || event.image_url.length === 0) {
-            textareaImage.value = `${baseUrl}${event.image.formats.small.url}`;
+            textareaImage.value = `${event.image.formats.small.url}`;
         } else {
             textareaImage.value = `${event.image_url}`;
         }

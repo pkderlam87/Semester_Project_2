@@ -9,7 +9,7 @@ const homeUrl = baseUrl + "/home";
     try {
         const response = await fetch(homeUrl);
         const json = await response.json();
-        banner.style.backgroundImage = `url("${baseUrl}${json.hero_banner.formats.medium.url}")`;
+        banner.style.backgroundImage = `url("${json.hero_banner.formats.medium.url}")`;
     } catch (error) {
         console.log(error);
     }
