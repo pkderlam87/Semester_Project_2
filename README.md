@@ -1,6 +1,6 @@
 # Smoof shoes - Semester_Project_2
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![image](https://github.com/pkderlam87/Semester_Project_2/blob/main/images/Screenshoot.png)
 
 To create an e-commerce website that has both customer-facing and admin sections. Both sections should be responsive and the website will be populated by a Strapi API supplied by Noroff.
 
