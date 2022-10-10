@@ -6,22 +6,36 @@
 .ri-add-circle-line,
 .ri-delete-bin-2-fill,
 .ri-edit-line,
-.ri-footprint-fill{
+.ri-footprint-fill {
     color: getColour(custom-cyan);
     font-size: 1.5rem;
+
     @media (min-width:$tablet-width) {
         font-size: 1.7rem;
     }
 }
+
+.ri-shopping-cart-2-line,
+.ri-shopping-cart-2-fill,
+.ri-user-shared-2-fill,
+.fa-user-circle {
+    font-size: 2rem;
+
+    @media (min-width:$tablet-width) {
+        font-size: 2.7rem;
+    }
+}
+
 .fa-instagram,
 .fa-facebook-square,
 .fa-pinterest-square,
 .fa-twitter-square,
 .fa-youtube,
-.ri-user-shared-2-fill{
+.ri-user-shared-2-fill {
     cursor: pointer;
 }
-.circle__number__products{
+
+.circle__number__products {
     display: contents;
     color: getColour(secondary-colour);
     font-size: 1.2rem;

@@ -11865,6 +11865,22 @@ footer i {
   }
 }
 
+.ri-shopping-cart-2-line,
+.ri-shopping-cart-2-fill,
+.ri-user-shared-2-fill,
+.fa-user-circle {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .ri-shopping-cart-2-line,
+  .ri-shopping-cart-2-fill,
+  .ri-user-shared-2-fill,
+  .fa-user-circle {
+    font-size: 2.7rem;
+  }
+}
+
 .fa-instagram,
 .fa-facebook-square,
 .fa-pinterest-square,
@@ -11952,7 +11968,7 @@ footer i {
 
 @media (min-width: 768px) {
   .nav-link {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
