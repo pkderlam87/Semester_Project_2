@@ -11590,7 +11590,7 @@ a {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    width: 330px;
+    width: 340px;
   }
   .block__shipping-delivery .delivery {
     -webkit-animation: none;
