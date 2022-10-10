@@ -3,8 +3,8 @@ import { doLogin } from "./doLogin.js";
 import { loginMenu } from "../../common/loginMenu.js";
 
 const form = document.querySelector("#login__form");
-const username = document.querySelector("#username");
-const password = document.querySelector("#password");
+const username = document.querySelector("#floatingInput");
+const password = document.querySelector("#floatingPassword");
 
 //loginMenu();
 

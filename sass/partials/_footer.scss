@@ -1,32 +1,38 @@
-footer{
+footer {
     background-color: getColour(shadow);
     text-align: center;
     margin-top: 10%;
-    .container{
+    color: getColour(primary-colour);
+
+    .container {
         display: grid;
         grid-template-rows: 0.3fr 0.3fr;
-        gap:10%;
+        gap: 10%;
     }
-    .social-media{
+
+    .social-media {
         grid-row: 1;
         display: flex;
         justify-content: space-around;
     }
-    i{
+
+    i {
         font-size: 2.3rem;
         color: getColour(dark-blue);
     }
 
-    @media(min-width:$tablet-width){
-        .container{
+    @media(min-width:$tablet-width) {
+        .container {
             display: flex;
             justify-content: space-between;
         }
-        .social-media{
+
+        .social-media {
             flex-grow: 0.2;
         }
-        i{
-            margin-right:6%;
+
+        i {
+            margin-right: 6%;
         }
     }
 }

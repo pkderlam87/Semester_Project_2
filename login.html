@@ -33,13 +33,14 @@
             <div class="container">
                 <form id="login__form">
                     <h1>Login</h1>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input id="username" required />
+                    <div class="form-floating mb-3">
+                        <input id="floatingInput" class="form-control" placeholder="Username" required />
+                        <label for="floatingInput">Username</label>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input id="password" maxlength="8" type="password" required />
+                    <div class="form-floating">
+                        <input id="floatingPassword" maxlength="8" type="password" class="form-control"
+                            placeholder="Password" required />
+                        <label for="floatingPassword">Password</label>
                     </div>
                     <button class="btn btn-primary submit">Sign in</button>
                 </form>

@@ -1,4 +1,4 @@
-.banner{
+.banner {
     width: 100%;
     height: 300px;
     text-align: center;
@@ -7,59 +7,57 @@
     background-size: 100%;
     animation: scale 15s;
     animation-fill-mode: forwards;
-    @keyframes scale{
-        0% {background-size: 105%;}
-        25%{background-size: 110%;}
-        50%{background-size: 115%}
-        75%{background-size: 120%}
-        100%{background-size: 125%}
+
+    @keyframes scale {
+        0% {
+            background-size: 105%;
+        }
+
+        25% {
+            background-size: 110%;
+        }
+
+        50% {
+            background-size: 115%
+        }
+
+        75% {
+            background-size: 120%
+        }
+
+        100% {
+            background-size: 125%
+        }
     }
-    @media(min-width:$tablet-width){
+
+    @media(min-width:$tablet-width) {
         height: 400px;
         text-align: right;
     }
 }
-.banner--slogan{
-    background-color: rgba($color:#fff, $alpha: 0.8);
-    h1{
+
+.banner--slogan {
+    background-color: rgba($color: #fff, $alpha: 0.8);
+
+    h1 {
         font-family: "Payback";
         font-size: 2.3rem;
     }
-    h2{
+
+    h2 {
         font-family: "Payback";
         font-size: 2rem;
     }
-    @media(min-width:$tablet-width){
-        h1{
+
+    @media(min-width:$tablet-width) {
+        h1 {
             font-size: 5rem;
         }
-        h2{
+
+        h2 {
             font-size: 3rem;
         }
+
         padding-right: 3%;
     }
-}
-.banner--products{
-    background-image: url('/images/mikel-parera-lEvE5asVsKs-unsplash.jpg');
-    width: 100%;
-    height: 70px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: sepia(60%);
-    @media (min-width:$tablet-width){
-        height: 130px;
-    }
-}
-.banner__cart{
-    background-image: url("/images/jogging-gee6f05fda_1280.jpg");
-    width: 100%;
-    height: 70px;
-    background-position: 25% 84%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    @media (min-width:$tablet-width){
-        height: 150px;
-    }
-    
 }

@@ -1,45 +1,90 @@
-.block__shipping-delivery{
+.block__shipping-delivery {
     color: getColour(secondary-colour);
-    width: 300px;
+    width: 326px;
     margin: $center;
-    @media(min-width: $tablet-width){
-        &{
+
+    @media(min-width: $tablet-width) {
+        & {
             display: flex;
             justify-content: space-evenly;
+            width: 330px;
         }
-        .delivery{
+
+        .delivery {
             animation: none;
             background: none;
             position: relative;
         }
-        .shipping{
+
+        .shipping {
             animation: none;
         }
     }
-    .shipping{
+
+    .shipping {
         animation: fadeOut 7s infinite;
-    @keyframes fadeOut {
-        0%{opacity: 0;}
-        10%{opacity: 0.5;}
-        20%{opacity: 1;}
-        25%{opacity: 1;}
-        50%{opacity: 1;}
-        100%{opacity:0;}
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.5;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
         }
     }
-    .delivery{
+
+    .delivery {
         position: absolute;
-        top:0;
+        top: 0;
         background: getColour(primary-colour);
         animation: fadeIn 7s infinite;
-    @keyframes fadeIn {
-        0%{opacity: 0;}
-        25%{opacity: 0;}
-        50%{opacity: 0;}
-        75%{opacity: 1;}
-        85%{opacity: 1;}
-        90%{opacity: 0.5;}
-        100%{opacity: 0;}
-    }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            85% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
     }
 }

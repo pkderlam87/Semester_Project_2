@@ -1,20 +1,23 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 html,
-body{
+body {
     height: 100%;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
     background-color: getColour(primary-colour);
-    background-image: url(../../images/asfalt-dark.png);
     margin: 0;
 }
-.wrapper{
+
+.wrapper {
     flex: 1 0 auto;
 }
-.disabled{
+
+.disabled {
     pointer-events: none;
 }

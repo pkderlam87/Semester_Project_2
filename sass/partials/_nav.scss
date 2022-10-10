@@ -1,79 +1,100 @@
-.wrap_nav_favorite_cart_login{
+.wrap_nav_favorite_cart_login {
     background-color: getColour(primary-colour) !important;
     display: grid;
     grid-template-columns: 0.3fr 1fr;
     margin-bottom: 2%;
-    @media (min-width:992px){
+
+    @media (min-width:992px) {
         grid-template-columns: 0.7fr 0.4fr;
     }
 }
-.bg-dark{
+
+.bg-dark {
     background-color: getColour(primary-colour) !important;
 }
-.logo{
+
+.logo {
     display: none;
-    @media (min-width:992px){
+
+    @media (min-width:992px) {
         display: inherit;
-        max-width: 85%;
+        max-width: 100%;
     }
 }
-.home{
-    display:block;
+
+.home {
+    display: block;
     color: getColour(secondary-colour);
     text-decoration: none;
-    &:hover{
+
+    &:hover {
         color: getColour(secondary-colour);
         text-decoration: underline;
     }
 }
-.navbar-dark{
-    .navbar-toggler-icon{
+
+.navbar-dark {
+    .navbar-toggler-icon {
         background-image: $custom-hamburger;
     }
-    .navbar-toggler{
+
+    .navbar-toggler {
         border: none;
         color: getColour(custom-cyan) !important;
     }
 }
-.nav-item{
+
+.nav-item {
     display: flex;
     align-items: center;
     max-width: 20%;
 }
-.nav-link{
-    &:hover{
+
+.nav-link {
+    color: getColour(secondary-colour) !important;
+
+    &:hover {
         text-decoration: underline;
     }
-    @media (min-width:$tablet-width){
+
+    @media (min-width:$tablet-width) {
         font-size: 1.5rem;
     }
 }
-.navbar-collapse{
+
+.navbar-collapse {
     flex-grow: inherit;
 }
-.favorite_cart_login{
+
+.favorite_cart_login {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    a{
+
+    a {
         width: 10%;
         text-decoration: none;
     }
-    @media (min-width:992px){
-    padding: 1% 25%;
-    justify-content:right;
-    i{
-        margin-right: 30%;
-    }
-    a{
-        margin-right: 30%;
-    }
-}
-}
-.favorite_cart_login--logo{
-    width: 47px;
-    display: inherit;
-    @media (min-width:992px){
-            display: none;
+
+    @media (min-width:992px) {
+        padding: 1% 25%;
+        justify-content: right;
+
+        i {
+            margin-right: 30%;
+        }
+
+        a {
+            margin-right: 30%;
         }
     }
+}
+
+.favorite_cart_login--logo {
+    width: 47px;
+    display: inherit;
+
+    @media (min-width:992px) {
+        display: none;
+    }
+}

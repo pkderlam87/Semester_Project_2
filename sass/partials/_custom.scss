@@ -1,32 +1,33 @@
 /* Colour variables*/
 $colours: (
-    primary-colour: #3D3D3D,
-    secondary-colour: #FFF,
-    dark-blue: #03414F,
-    custom-cyan:#69E1FC,
+    primary-colour: #E3E3E3,
+    secondary-colour: #353333,
+    dark-blue: #6ac6db,
+    custom-cyan:#024e5f,
     pop-up_borders: #962A03,
     dark-custom-orange: #A62F03,
     custom-orange: #D96704,
     light-custom-orange:#FCC4B0,
-    light-yellow:#F7CC97,
+    light-yellow:#703f02,
     red-custom: #822503,
-    shadow: #E3E3E3,
-    secondary-colour-transparent: rgba(255,255,255, 0.6),
+    shadow: #3D3D3D,
+    secondary-colour-transparent: rgba(255, 255, 255, 0.6),
 );
+
 /* Colour function*/
-@function getColour($colour){
+@function getColour($colour) {
     @return map-get($colours, $colour);
 }
+
 /* Font variables*/
 $font-primary: "Skolar Sans Latin", sans-serif;
 $font-secondary: "Gitan Latin", sans-serif;
 /* center*/
-$center:0 auto;
+$center: 0 auto;
 $full-width: 100%;
 /* tablet size to media query*/
 $tablet-width: 768px;
 /* desktop size to media query*/
 $desktop-width: 998px;
 /* toggle navbar mobile/tablet */
-$custom-hamburger:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(105, 225, 252, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
-
+$custom-hamburger: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(2, 78, 95, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")

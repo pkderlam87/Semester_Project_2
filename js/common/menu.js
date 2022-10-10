@@ -14,7 +14,7 @@ const menu = document.querySelector(".wrap_nav_favorite_cart_login");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
+                    <a href="/index.html"><img src="/images/Logo.png" alt="The Smoof Shoes logo"
                         class="logo"></a>
                     <a href="/index.html" class="nav-link active home">Home</a>
                 </li>
@@ -26,7 +26,7 @@ const menu = document.querySelector(".wrap_nav_favorite_cart_login");
     </div>
     </nav>
     <div class="favorite_cart_login">
-    <a href="/index.html"><img src="/images/Logo-white.png" alt="The Smoof Shoes logo"
+    <a href="/index.html"><img src="/images/Logo.png" alt="The Smoof Shoes logo"
         class="favorite_cart_login--logo"></a>
     <a href="/cart.html" id="cart"><i class="ri-shopping-cart-2-line" title="Cart is empty"></i></a>
     <div class="login__icon"></div>
