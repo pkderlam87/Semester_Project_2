@@ -33,6 +33,11 @@ I used the following tech stack for this semester's project:
 git clone https://github.com/pkderlam87/Semester_Project_2.git
 ```
 
+### Installing globally on the terminal
+
+npm install -g http-server
+
+
 ### Running
 
 To run the website:
@@ -40,14 +45,14 @@ To run the website:
 ```
 cd Semester_Project_2
 ```
+On the terminal, run:
 
 ```
-code
+http-server
 ```
 
-```
-Alt+L Alt+O
-```
+Open the "index.html" file with "Live Server"
+
 
 ## Contributing
 

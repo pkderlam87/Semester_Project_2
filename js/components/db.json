@@ -1,0 +1,84 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Great sneaker",
+            "price": 300,
+            "image": "../../images/productsImg/manki-kim-xPY70gYcbcI-unsplash.jpg",
+            "alt": "It is a person wearing sneakers",
+            "description": "It is a wonderful sneaker",
+            "featured": false
+        },
+        {
+            "id": 2,
+            "title": "Wonderful sneaker",
+            "price": 350,
+            "image": "../../images/productsImg/linda-xu-fUEP0djb1hA-unsplash.jpg",
+            "alt": "It is sneakers white",
+            "description": "It is a wonderful sneaker",
+            "featured": false
+        },
+        {
+            "id": 3,
+            "title": "Substantial sneaker",
+            "price": 300,
+            "image": "../../images/productsImg/lefteris-kallergis-j1GiPlvSGWI-unsplash(1).jpg",
+            "alt": "It is sneakers colorful",
+            "description": "It is a wonderful sneaker",
+            "featured": false
+        },
+        {
+            "id": 4,
+            "title": "Significant sneaker",
+            "price": 400,
+            "image": "../../images/productsImg/grailify-UwnvYQg-oYE-unsplash.jpg",
+            "alt": "It is sneakers white",
+            "description": "It is a wonderful sneaker",
+            "featured": true
+        },
+        {
+            "id": 5,
+            "title": "Exceptional sneaker",
+            "price": 450,
+            "image": "../../images/productsImg/fachry-zella-devandra-KvRy5S8hKPw-unsplash.jpg",
+            "alt": "It is a sneaker white",
+            "description": "It is a wonderful sneaker",
+            "featured": false
+        },
+        {
+            "id": 6,
+            "title": "Extraordinary sneaker",
+            "price": 350,
+            "image": "../../images/productsImg/fachry-zella-devandra-_3reYWNMiiA-unsplash.jpg",
+            "alt": "It is a person wearing gray sneakers",
+            "description": "It is a wonderful sneaker",
+            "featured": true
+        },
+        {
+            "id": 7,
+            "title": "Casual sneaker",
+            "price": 350,
+            "image": "../../images/productsImg/elisei-abiculesei-VtHn4hQlA70-unsplash.jpg",
+            "alt": "It is a person wearing black sneakers",
+            "description": "It is a wonderful sneaker",
+            "featured": false
+        },
+        {
+            "id": 8,
+            "title": "Special sneaker",
+            "price": 250,
+            "image": "../../images/productsImg/david-gavi-ZC2dxuOQy9c-unsplash.jpg",
+            "alt": "It is a person wearing a basketball sneaker",
+            "description": "It is a wonderful sneaker",
+            "featured": true
+        }
+    ],
+    "banner": [
+        {
+            "id": 1,
+            "title": "Great sneaker",
+            "image": "../../images/productsImg/manki-kim-xPY70gYcbcI-unsplash.jpg",
+            "alt": "It is a person wearing sneakers"
+        }
+    ]
+}
