@@ -48,11 +48,12 @@ function changeButton(buttonCard, json) {
 }
 
 function showImageCard(imagePlace, json) {
+
     for (let i = 0; i < imagePlace.length; i++) {
-        if (json[i].image_url === null || json[i].image_url.length === 0) {
-            imagePlace[i].innerHTML += `<img src="${json[i].image.formats.small.url}" class="card-img-top" alt="${json[i].image.alternativeText}"></img>`
+        if (json[i].image === null || json[i].image.length === 0) {
+            imagePlace[i].innerHTML += `<img src="${json[i].image}" class="card-img-top" alt="${json[i].alt}"></img>`
         } else {
-            imagePlace[i].innerHTML += `<img src="${json[i].image_url}" class="card-img-top" alt="${json[i].title}">`;
+            imagePlace[i].innerHTML += `<img src="${json[i].image}" class="card-img-top" alt="${json[i].title}">`;
         }
     }
 }

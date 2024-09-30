@@ -16,6 +16,7 @@ const productURL = baseUrl + "/products/" + id;
     try {
         const response = await fetch(productURL);
         const details = await response.json();
+        console.log(details);
         document.title = `Smoof shoes | ${details.title}`;
         createDetails(details);
     } catch {
